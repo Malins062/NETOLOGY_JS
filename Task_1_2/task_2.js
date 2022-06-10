@@ -48,16 +48,142 @@ const goodsIndex = [goods[0], goods[1], goods[2], goods[3], goods[4], ];
 // Корзина потребителя
 const basket = [
     {
-        goodId: 5,
+        good: 5,
         amount: 1
     },
     {
-        goodId: 4,
+        good: 4,
         amount: 1
     },
 ];
 
+basket.delPosition = function(id, cnt=0) {
+    /*
+    Метод удаления товара с индетификатором - id, из корзину в количестве - cnt
+    */
 
-console.time();
-console.log(d(process.argv[2]));
-console.timeEnd();
+    // Поиск товара
+    const _position = this.searchPosition(id);
+
+    if (_position[1] === -1) {
+
+        // Возврат ошибки, о том, что товар в корзине не найден
+        return {good: undefined, amount: 0};
+    } else {
+
+        if (_position[0].amount - cnt <= 0 || cnt === 0){
+
+            // Удаление товара
+            this.splice(_position[1], 1);
+        } else {
+
+            // Удаление количества товара, из уже существующего в корзине
+            _position[0].amount -= cnt;
+        }
+
+        // Вывод удаленного/обновленного товара
+        return _position[0];
+    }
+};
+
+
+basket.addPosition = function(id, cnt) {
+    /*
+     Метод добавления товара с индетификатором - id, в корзину в количестве - cnt
+    */
+    
+    // Поиск товара
+    const _position = this.searchPosition(id);
+    _position[0].amount += cnt;
+    _position[0].good = id;
+
+    if (_position[1] === -1) {
+
+        // Добавление нового товара в корзину
+        this.push(_position[0])
+    } else {
+        
+        // Прибавление количества товара, уже существующего в корзине
+        this[_position[1]] = _position[0];
+    }
+
+    // Вывод добавленного товара
+    return _position[0];
+};
+
+basket.clearPositions = function() {
+    /*
+    Метод полной очистки корзины
+    */
+
+    this.length = 0;
+    return this.length;
+};
+
+basket.searchPosition = function(id) {
+    /*
+    Метод поиска товара с индетификатором - id, в корзине и возврата его значений и индекса
+    */
+
+    // Поиск товара
+    const _position = this.find(g => g.good === id);
+    if (_position != undefined) {
+        
+        // Поиск индекса товара
+        const _index = this.findIndex(g => g.good === id);
+        
+        // Возврат информации о товаре и его индекса
+        return [_position, _index];
+    
+    } else {
+
+        // Товар не найден
+        return [{good: undefined, amount: 0}, -1];
+    }
+};
+
+basket.totalAmount = function() {
+    /*
+    Метод подсчета общего количества товаров в корзине
+    */
+
+    const count = this.map(item => item.amount).reduce((prev, curr) => prev + curr, 0);
+    return count;
+};
+
+basket.totalSumm = function() {
+    /*
+    Метод подсчета общей суммы стоимости товаров в корзине
+    */
+    
+    let totalCost = 0;
+    
+    for (let i = 0; i < this.length; i++) {
+        totalCost += goods[this[i].good].price * this[i].amount 
+    }
+
+    return totalCost;
+};
+
+//  Проверка поиска товаров с разными идентификаторами
+console.log(basket.searchPosition(4));
+console.log(basket.searchPosition(111));
+
+//  Проверка очистки корзины
+console.log(basket.clearPositions());
+
+// Проверка добавления товаров в корзину или увеличения их количества
+console.log(basket.addPosition(4, 5));
+console.log(basket.addPosition(4, 3));
+console.log(basket.addPosition(1, 1));
+console.log(basket.addPosition(3, 2));
+console.log(basket.addPosition(5, 2));
+
+// Проверка удалений товаров или уменьшение количества из корзины
+console.log(basket.delPosition(4, 5));
+console.log(basket.delPosition(5));
+console.log(basket.delPosition(15));
+
+// Подсчет количества товаров в корзине
+console.log('Корзина:');
+console.log(`Всего товаров ${basket.totalAmount()} на общую сумму ${basket.totalSumm()} руб.`);
