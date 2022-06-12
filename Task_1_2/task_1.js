@@ -5,15 +5,13 @@ function cntSimpleNumbers(num) {
     Функция вычисления количества первых n простых чисел.
     */
     
-    let cnt = []
-
     // Проверка на правильность ввода числового аргумента
     if (isNaN(num) || num < 1) {
-        return cnt
+        return undefined
     } 
     
     let i = 2;
-    cnt[0] = 2;
+    let cnt = [2]
 
     // Вычисление количество простых чисел в цикле
     for (let count = 1; count < num; count++) {
