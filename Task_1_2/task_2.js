@@ -142,28 +142,29 @@ basket.searchPosition = function(id) {
     }
 };
 
-basket.totalAmount = function() {
+basket.totalCalc = function(){
     /*
-    Метод подсчета общего количества товаров в корзине
+    Метод подсчета общего количества товаров, находящихся в корзине и их суммы.
+    Выходные параметры:
+        totalAmount - общее количество товаров;
+        totalSumm - общеая сумма стоимости всех товаров.
+
     */
 
-    const count = this.map(item => item.amount).reduce((prev, curr) => prev + curr, 0);
-    return count;
-};
+    // Подсчет количества товаров
+    const amount = this.map(item => item.amount).reduce((prev, curr) => prev + curr, 0);
 
-basket.totalSumm = function() {
-    /*
-    Метод подсчета общей суммы стоимости товаров в корзине
-    */
-    
-    let totalCost = 0;
-    
+    // Подсчет общей стоимости товаров
+    let cost = 0;    
     for (let i = 0; i < this.length; i++) {
-        totalCost += goods[this[i].good].price * this[i].amount 
+        cost += goods[this[i].good].price * this[i].amount 
     }
 
-    return totalCost;
-};
+    return {
+        totalAmount: amount,
+        totalSumm: cost
+    }
+}
 
 //  Проверка поиска товаров с разными идентификаторами
 console.log(basket.searchPosition(4));
@@ -184,6 +185,6 @@ console.log(basket.delPosition(4, 5));
 console.log(basket.delPosition(5));
 console.log(basket.delPosition(15));
 
-// Подсчет количества товаров в корзине
+// Подсчет количества товаров в корзине, и их стоимости
 console.log('Корзина:');
-console.log(`Всего товаров ${basket.totalAmount()} на общую сумму ${basket.totalSumm()} руб.`);
+console.log(basket.totalCalc());
