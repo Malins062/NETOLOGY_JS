@@ -2,25 +2,27 @@
 
 function cntSimpleNumbers(num) {
     /* 
-    Функция вычисления количества простых чисел в заданном диапазоне.
-    Параметр num - диапазон чисел от 2 до num включительно.
+    Функция вычисления количества первых n простых чисел.
     */
     
-    let cnt = -1
+    let cnt = []
 
     // Проверка на правильность ввода числового аргумента
-    if (isNaN(num) || num < 2) {
+    if (isNaN(num) || num < 1) {
         return cnt
-    }
+    } 
+    
+    let i = 2;
+    cnt[0] = 2;
 
     // Вычисление количество простых чисел в цикле
-    cnt = 2;
-    let i = cnt;
-    while (i <= num) {
-        if (i % 2 != 0) {
-            cnt++;
-        }
-        i++;
+    for (let count = 1; count < num; count++) {
+        do {
+            i++;
+            if (i % 2 != 0) {
+                cnt[count] = i;        
+            }    
+        } while (i % 2 != 0);
     }
     return cnt;
 }
