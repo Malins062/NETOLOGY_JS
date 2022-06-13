@@ -11,18 +11,23 @@ function cntSimpleNumbers(num) {
     } 
     
     let i = 2;
-    let cnt = [2]
+    let simpleNumbers = [2];
+    let index = 1;
 
-    // Вычисление количество простых чисел в цикле
-    for (let count = 1; count < num; count++) {
+    while (i < num) {
+        i++;
+
+        let n = 1;
         do {
-            i++;
-            if (i % 2 != 0) {
-                cnt[count] = i;        
-            }    
-        } while (i % 2 != 0);
+            n++;
+        } while (i % n != 0) 
+
+        if (i == n) {
+            simpleNumbers[index] = n;
+            index++;
+        }
     }
-    return cnt;
+    return simpleNumbers;
 }
 
 console.time();
