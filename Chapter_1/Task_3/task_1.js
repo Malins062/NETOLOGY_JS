@@ -43,14 +43,27 @@ class GoodList {
 
     constructor (filter, sortPrice, sortDir) {
         this.#goods = [];
-        this.filter = filter;
+        this.filter = /Брюки/i;
         this.sortPrice = sortPrice;
         this.sortDir = sortDir;
     }
 
     get list() {
+        // Фильтрация
+        const resultList = this.#goods.filter((value) => this.filter.test(value.name))
+
+        // Сортировка
         if (this.sortPrice) {
-            return this.#goods.sort((prev, next) => prev.price - prev.next ? this.sortDir : !this.sortDir);
+            if (this.sortDir) {
+                return resultList.sort((prev, next) => (prev.price - next.price));
+            }  else {
+                return resultList.sort((prev, next) => (next.price - prev.price));
+            }
+            // return this.#goods.filter((value) => this.filter.test(value.name))
+                            //   .sort((prev, next) => (prev.price <= next.price) ? 1 : -1);
+        } else {
+
+            return resultList;
         }
     }
 
@@ -59,7 +72,7 @@ class GoodList {
     }
 
     remove (id) {
-        const _index = this.#goods.findIndex(g => g.id === id)
+        const _index = this.#goods.findIndex(value => value.id === id)
         if (_index != undefined) {
             this.#goods.splice(_index, 1);
         }
@@ -121,7 +134,7 @@ const good_5 = new Good(5, 'Костюм Adidas', 'Костюм спортивн
 good_2.setAvailable = false;
 
 // Создание экземпляра GoodList
-const catalog = new GoodList;
+const catalog = new GoodList('', true, false);
 
 // Добавление товаров в список
 catalog.add(good_1);
