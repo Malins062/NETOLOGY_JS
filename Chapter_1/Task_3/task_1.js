@@ -25,7 +25,7 @@ class Good {
     }
 }
 
-class GoodList {
+class GoodsList {
     /*
     GoodsList - класс для хранения каталога товаров со свойствами:
         #goods       массив экземпляров объектов класса Good (приватное поле)
@@ -86,14 +86,14 @@ class GoodList {
     }
 }
 
-class BaketGood extends Good {
+class BasketGood extends Good {
     /*
     BasketGood - класс дочерний от Good, для хранения данных о товаре в корзине с дополнительным свойством:
         amount      количество товара в корзине
     */
 
-    constructor (good) {
-        super(good)
+    constructor (id, name, description, sizes, price, available, amount) {
+        super(id, name, description, sizes, price, available);
         this.amount = amount;
     }
 }
@@ -124,6 +124,16 @@ class Basket {
 
     }
 
+    add (good, amount) {
+        const _index = this.goods.findIndex(value => value.id === good.id)
+        if (_index >= 0) {
+            this.goods[_index].amount += amount;
+        } else {
+            const newBasketGood = new BasketGood(values(good), amount);
+            this.goods.push(newBasketGood);
+        }
+    }
+
     clear () {
         this.goods = [];
     }
@@ -139,8 +149,8 @@ const good_5 = new Good(5, 'Костюм Adidas', 'Костюм спортивн
 
 good_2.setAvailable = false;
 
-// Создание экземпляра GoodList
-const catalog = new GoodList(/Брюки/i, true, false);
+// Создание экземпляра GoodsList
+const catalog = new GoodsList(/Брюки/i, true, false);
 
 // Добавление товаров в список
 catalog.add(good_1);
@@ -167,4 +177,9 @@ console.log(catalog.list, '\n');
 catalog.remove(1);
 catalog.remove(3);
 
+// Создание корзины
+basket = new Basket();
+
+basket.add(good_1, 1);
+basket.add(good_1, 2);
 
