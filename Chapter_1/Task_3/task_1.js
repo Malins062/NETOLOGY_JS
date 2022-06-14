@@ -34,6 +34,8 @@ class GoodList {
         sortDir      булево значение, признак направления сортировки по полю Price (true - по возрастанию, false - по убыванию)
 
         get list()     возвращает массив доступных для продажи товаров в соответствии с установленным фильтром и сортировкой по полю Price
+        get listParams()     возвращает текущие параметры
+        
         add()          добавление товара в каталог
         remove(id)     удаление товара из каталога по его id
     */
@@ -43,7 +45,7 @@ class GoodList {
 
     constructor (filter, sortPrice, sortDir) {
         this.#goods = [];
-        this.filter = /Брюки/i;
+        this.filter = filter;
         this.sortPrice = sortPrice;
         this.sortDir = sortDir;
     }
@@ -65,6 +67,10 @@ class GoodList {
 
             return resultList;
         }
+    }
+
+    get listParams() {
+        return `Параметры каталога: фильтр - ${this.filter}, сортировака по цене - ${this.sortPrice ? "да" : "нет"} (по ${this.sortDir ? "возрастанию" : "убыванию"})`
     }
 
     add (good) {
@@ -134,7 +140,7 @@ const good_5 = new Good(5, 'Костюм Adidas', 'Костюм спортивн
 good_2.setAvailable = false;
 
 // Создание экземпляра GoodList
-const catalog = new GoodList('', true, false);
+const catalog = new GoodList(/Брюки/i, true, false);
 
 // Добавление товаров в список
 catalog.add(good_1);
@@ -143,8 +149,19 @@ catalog.add(good_3);
 catalog.add(good_4);
 catalog.add(good_5);
 
-// Вывод каталога товаров
-console.log(catalog.list)
+// Вывод каталога товаров с разными параметрами сортировки и фильтра
+console.log(catalog.listParams);
+console.log(catalog.list, '\n');
+
+catalog.filter = /и/i;
+catalog.sortPrice = false;
+console.log(catalog.listParams);
+console.log(catalog.list, '\n');
+
+catalog.sortPrice = true;
+catalog.sortDir = true;
+console.log(catalog.listParams);
+console.log(catalog.list, '\n');
 
 // Удаление некоторых товаров из списка
 catalog.remove(1);
