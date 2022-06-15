@@ -8,7 +8,7 @@ class Good {
         price         цена товара
         available     булево значение, признак доступности товара для продажи (true - доступен, false - недоступен)
 
-        set available() изменение признака доступности товара для продажи 
+        setAvailable() изменение признака доступности товара для продажи 
     */
     
     constructor (id, name, description, sizes, price, available) {
@@ -20,6 +20,9 @@ class Good {
         this.available = available;
     }
 
+    /**
+     * @param {boolean} value
+     */
     set setAvailable (value) {
         this.available = value
     }
@@ -61,10 +64,7 @@ class GoodsList {
             }  else {
                 return resultList.sort((prev, next) => (next.price - prev.price));
             }
-            // return this.#goods.filter((value) => this.filter.test(value.name))
-                            //   .sort((prev, next) => (prev.price <= next.price) ? 1 : -1);
         } else {
-
             return resultList;
         }
     }
@@ -108,6 +108,7 @@ class Basket {
 
         add(good, amount)    Добавляет товар в корзину, если товар уже есть увеличивает количество
         remove(good, amount) Уменьшает количество товара в корзине, если количество становится равным нулю, товар удаляется
+                             Товар также удаляется, если параметр amount=0 или не задан
         clear()              Очищает содержимое корзины
         removeUnavailable()  Удаляет из корзины товары, имеющие признак available === false (использовать filter())
     */
@@ -117,25 +118,46 @@ class Basket {
     }
 
     get totalAmount () {
-
+        return this.goods.map(item => item.amount).reduce((prev, curr) => prev + curr, 0);
     }
 
     get totalSum () {
-
+        let cost = 0;
+        this.goods.forEach(item => cost += item.price * item.amount);
+        return cost;
     }
 
     add (good, amount) {
         const _index = this.goods.findIndex(value => value.id === good.id)
         if (_index >= 0) {
+            // Добавление количества, уже существующего, товара в корзине
             this.goods[_index].amount += amount;
         } else {
-            const newBasketGood = new BasketGood(values(good), amount);
+            // Добавление нового товара в корзину
+            const newBasketGood = new BasketGood(good.id, good.name, good.description, good.sizes, good.price, good.available, amount);
             this.goods.push(newBasketGood);
         }
     }
 
+    remove (good, amount=0) {
+        const _index = this.goods.findIndex(value => value.id === good.id)
+        if (_index >= 0) {
+            if (this.goods[_index].amount - amount <= 0 || amount === 0){
+                // Удаление товара из корзины
+                this.goods.splice(_index, 1);
+            } else {
+                // Изменение количества товара в корзине
+                this.goods[_index].amount -= amount;
+            }
+        }
+    }
+
+    removeUnavailable () {
+        this.goods.filter(item => item.available === false).forEach(row => this.remove(row))
+    }
+
     clear () {
-        this.goods = [];
+        this.goods.length = 0;
     }
 
 }
@@ -148,6 +170,7 @@ const good_4 = new Good(4, 'Туфли', 'Туфли женские, замша�
 const good_5 = new Good(5, 'Костюм Adidas', 'Костюм спортивный, мужской', [34, 42, ], 10200, true)
 
 good_2.setAvailable = false;
+good_5.setAvailable = false;
 
 // Создание экземпляра GoodsList
 const catalog = new GoodsList(/Брюки/i, true, false);
@@ -159,7 +182,7 @@ catalog.add(good_3);
 catalog.add(good_4);
 catalog.add(good_5);
 
-// Вывод каталога товаров с разными параметрами сортировки и фильтра
+// Вывод в консоль каталога товаров с разными параметрами сортировки и фильтра
 console.log(catalog.listParams);
 console.log(catalog.list, '\n');
 
@@ -178,8 +201,26 @@ catalog.remove(1);
 catalog.remove(3);
 
 // Создание корзины
-basket = new Basket();
+const basket = new Basket();
 
+// Добавление товаров в корзину
 basket.add(good_1, 1);
 basket.add(good_1, 2);
+basket.add(good_3, 3);
+basket.add(good_5, 1);
+basket.add(good_2, 4);
+
+// Вывод в консоль общего количества товаров в корзине и их стоимости
+console.log(`В корзине товаров: ${basket.totalAmount} (${basket.totalSum} руб.)`);
+
+// Удаление/изменение товаров в корзине
+basket.remove(good_3, 2);
+basket.remove(good_3, 1);
+basket.remove(good_4, 1);
+
+// Удаление недоступных товаров в каталоге для продажи из корзины
+basket.removeUnavailable();
+
+// Очистка корзины
+basket.clear();
 
