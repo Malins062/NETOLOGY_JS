@@ -149,7 +149,10 @@ class Basket {
                 // Изменение количества товара в корзине
                 this.goods[_index].amount -= amount;
             }
+        } else {
+            console.log(`Функция Basket.remove: не найден товар с id = ${good.id}`)
         }
+
     }
 
     removeUnavailable () {
