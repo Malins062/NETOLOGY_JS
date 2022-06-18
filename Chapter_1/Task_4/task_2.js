@@ -2,33 +2,63 @@ var readline = require('readline');
 
 const textGame = 'Система загадала число от 0 до 999. Угадаете число?';
 const textMainQuestion = 'Введите число: ';
+let currentAttempt = 1;
+let textQuestion = (attempt, description=textMainQuestion) => {return `Попытка №${attempt}. ${description}`};
 
 const fs = require("fs");
-const fileName = "./task_2.log";
-let out = fs.createWriteStream(fileName)
+const logFileName = "./task_2.log";
 
-var r1 = readline.createInterface(process.stdin, process.stdout);
-// var rl = readline.createInterface(process.stdin, out, );
+function writeLog(fileName, content, dateTime=true) {
+    let new_content = '';
+    if (dateTime) {
+        new_content = new Date().toLocaleString() + ' - ' + content + '\n';
+    } else {
+        new_content = content
+    }
+    fs.appendFile(fileName, new_content, (err) => {
+        if (err) {
+          console.error(err)
+          return
+        }
+      })
+}
+
+
+var rl = readline.createInterface(process.stdin, process.stdout);
 
 const n = Math.floor(Math.random() * 1000);
-        
-console.log(textGame);
 
-rl.setPrompt(textMainQuestion);
+
+console.log(textGame);
+writeLog(logFileName, textGame);
+
+rl.setPrompt(textQuestion(currentAttempt));
+writeLog(logFileName, textQuestion(currentAttempt));
 rl.prompt();
-// rl.question('Система загадала число от 0 до 999. Угадаете число?\nВведите число: ', function(answer) {
 
 rl.on('line', (answer) => {
-    if (isNaN(answer)) {
-        console.log(`До свидания...`);
+    currentAttempt++;
+    // console.log(answer, n);
 
-        rl.close();
-    } else if (answer === n) {
-        console.log(`ПОЗДРАВЛЯЮ, Вы угадали число!!! Система загадала: ${answer}`);
-        rl.close();
+    let text = '';
+    let exit = false;
+
+    if (isNaN(answer)) {
+        text = 'До свидания...';
+        exit = true;
+    } else if (answer == n) {
+        text = `ПОЗДРАВЛЯЮ, Вы угадали число!!! Система загадала: ${answer}`;
+        exit = true;
     } else if (answer > n) {
-        console.log(`Искомое число больше, введенного: ${answer}\n${textMainQuestion}`);
+        text = `Искомое число ментше, введенного: ${answer}\n${textQuestion(currentAttempt)}`;
     } else if (answer < n) {
-        console.log(`Искомое число меньше, введенного: ${answer}\n${textMainQuestion}`);
+        text = `Искомое число больше, введенного: ${answer}\n${textQuestion(currentAttempt)}`;
     }
+
+    console.log(text);
+    writeLog(logFileName, text);
+    if (exit) {
+        rl.close();
+    }
+
 });
