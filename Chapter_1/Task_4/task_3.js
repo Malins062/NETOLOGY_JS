@@ -9,9 +9,11 @@ const logFileName = "./task_3.log";
 
 var rl = require('readline').createInterface(process.stdin, process.stdout);    
 
-function getCurrentAttempt(attempt) {
-    return function increment(incr) {
-        return (attempt + incr);
+function getNextAttempt(attempt=0) {
+    let next_attempt = attempt;
+    return function increment() {
+        next_attempt++;
+        return next_attempt;
     }
 }
 
@@ -81,13 +83,13 @@ async function getAnswer(text) {
         if (exit) {
             rl.close();
         } else {
-            getAnswer(textQuestion(currentAttempt(1)));
+            getAnswer(textQuestion(nextAttempt()));
         }
 
     });    
 }
 
-const currentAttempt = getCurrentAttempt(0);
+const nextAttempt = getNextAttempt();
 
 // Загадывание числа системой
 const randomNumber = Math.floor(Math.random() * 1000);
@@ -98,4 +100,4 @@ console.log(textGame);
 // Запись лога
 writeLog(logFileName, textGame);
 
-getAnswer(textQuestion(currentAttempt(1)));
+getAnswer(textQuestion(nextAttempt()));
