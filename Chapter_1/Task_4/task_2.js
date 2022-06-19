@@ -50,7 +50,7 @@ rl.on('line', (answer) => {
         text = `ПОЗДРАВЛЯЮ, Вы угадали число!!! Система загадала: ${answer}`;
         exit = true;
     } else if (answer > n) {
-        text = `Искомое число ментше, введенного: ${answer}\n${textQuestion(currentAttempt)}`;
+        text = `Искомое число меньше, введенного: ${answer}\n${textQuestion(currentAttempt)}`;
     } else if (answer < n) {
         text = `Искомое число больше, введенного: ${answer}\n${textQuestion(currentAttempt)}`;
     }
