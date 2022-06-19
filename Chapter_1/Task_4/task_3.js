@@ -1,15 +1,21 @@
+const { resolve } = require('path');
+
 const textGame = 'Система загадала число от 0 до 999. Угадаете число?';
 const textMainQuestion = 'Введите число: ';
-
-// Текст вопроса
-let textQuestion = (attempt, description=textMainQuestion) => {return `Попытка №${attempt}. ${description}`};
 
 // Имя файла журнала
 const logFileName = "./task_3.log";
 
+// Текст вопроса
+let textQuestion = (attempt, description=textMainQuestion) => {return `Попытка №${attempt}. ${description}`};
+
 var rl = require('readline').createInterface(process.stdin, process.stdout);    
 
 function getNextAttempt(attempt=0) {
+    /*
+    Функция - Счетчик попыток
+    */
+
     let next_attempt = attempt;
     return function increment() {
         next_attempt++;
@@ -42,21 +48,29 @@ function writeLog(fileName, content, dateTime=true) {
     })
 }
 
+function question(text) {
+    return new Promise((resolve, data) => {
+        rl.question(text, (data) => {
+            resolve(data);
+        })
+    })
+}
+
 async function getAnswer(text) {
     /*
     Функция вывод диалога с пользователем и вывода ответа
     "text" - текст вопроса, "n" - число дла сравнения
     */
 
-
-    rl.question(text, (answer) => {
+    while (true) {
+        const answer = await question(text);
         let exit = false;
 
         // Запись в файл
         writeLog(logFileName, text + answer);
 
         let answer_text = '';
-        console.log(answer, randomNumber);
+        console.log('Подсказка: ', answer, randomNumber);
         
         // Проверка введеной информации
         if (isNaN(answer)) {
@@ -68,7 +82,7 @@ async function getAnswer(text) {
         } else {
     
             if (answer > randomNumber) {
-                answer_text = `Искомое число ментше, введенного: ${answer}`;
+                answer_text = `Искомое число меньше, введенного: ${answer}`;
             } else if (answer < randomNumber) {
                 answer_text = `Искомое число больше, введенного: ${answer}`;
             }    
@@ -82,13 +96,14 @@ async function getAnswer(text) {
 
         if (exit) {
             rl.close();
+            break;
         } else {
-            getAnswer(textQuestion(nextAttempt()));
-        }
-
-    });    
+            text = textQuestion(nextAttempt());
+        }    
+    }
 }
 
+// Счетчик попыток
 const nextAttempt = getNextAttempt();
 
 // Загадывание числа системой
@@ -100,4 +115,5 @@ console.log(textGame);
 // Запись лога
 writeLog(logFileName, textGame);
 
+// Запуск диалога
 getAnswer(textQuestion(nextAttempt()));
