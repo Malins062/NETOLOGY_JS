@@ -18,3 +18,11 @@
 * [Задание 1.](Chapter_1/Task_4/task_1.js "Задание 1.4.1")
 * [Задание 2.](Chapter_1/Task_4/task_2.js "Задание 1.4.2")
 * [Задание 3.](Chapter_1/Task_4/task_3.js "Задание 1.4.3")
+
+## 2. Основы разработки интерфейсов
+
+2.1. ["Возможности JavaScript в браузере".](Chapter_2/Task_1/README.md "Задание 2.1")
+
+* [Задание 1.](Chapter_2/Task_1/countdown/task.html "Задание 2.1.1")
+* [Задание 2.](Chapter_2/Task_1/cookie-clicker/task.html "Задание 2.1.2")
+* [Задание 3.](Chapter_2/Task_1/mole-game/task.html "Задание 2.1.3")
