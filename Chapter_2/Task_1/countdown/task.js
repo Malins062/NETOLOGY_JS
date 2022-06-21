@@ -13,6 +13,7 @@ setTimeout(function tick() {
         
     if (seconds == -1) {
         alert('Вы победили в конкурсе!');
+        document.getElementById('file_download').click();
         return;
     } else {
         var newTime = new Date(null);
