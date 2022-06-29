@@ -1,35 +1,38 @@
-const allMenuItems = document.querySelectorAll('.menu__item');
-// console.log('Все меню all_menu__item: ', allMenuItems);
+const subMenuItems = Array.from(document.querySelectorAll('.menu__sub'));
 
-const menuItems = Array.from(allMenuItems);
-console.log('Нужные menu__item: ', menuItems);
+subMenuItems.forEach(() => {
+    
+})
 
-let activeMenu = null;
-// let subMenu = null;
+// const menuItems = Array.from(allMenuItems);
+// console.log('Нужные menu__item: ', menuItems);
 
-if (menuItems.length > 0) {
+// let activeMenu = null;
+// // let subMenu = null;
 
-    for (let item of menuItems) {
-        console.log('Обрабатываем клики на меню: ', item);
-        if (item.querySelector('.menu_sub'))
-        item.onclick = function getSubMenu() {
-            const subMenu = this.querySelector('.menu_sub');
-            // const subMenu = this.querySelector('.menu_sub');
-            console.log('1. Есть ли подменю: ', subMenu);
-            console.log('2. Активное меню ДО: ', activeMenu);
-            if (subMenu == activeMenu) alert('1')
-            if (subMenu != activeMenu && subMenu != null) {
-                if (activeMenu != null) {
-                    activeMenu.className = 'menu menu_sub';
-                }
-                subMenu.className = 'menu menu_sub menu_active';
-                activeMenu = subMenu;
+// if (menuItems.length > 0) {
 
-                console.log('3. Подменю ПОСЛЕ: ', subMenu);
-                console.log('4. Активное меню ПОСЛЕ: ', activeMenu);
-                return false;
-            }
-        }    
+//     for (let item of menuItems) {
+//         console.log('Обрабатываем клики на меню: ', item);
+//         if (item.querySelector('.menu_sub'))
+//         item.onclick = function getSubMenu() {
+//             const subMenu = this.querySelector('.menu_sub');
+//             // const subMenu = this.querySelector('.menu_sub');
+//             console.log('1. Есть ли подменю: ', subMenu);
+//             console.log('2. Активное меню ДО: ', activeMenu);
+//             if (subMenu == activeMenu) alert('1')
+//             if (subMenu != activeMenu && subMenu != null) {
+//                 if (activeMenu != null) {
+//                     activeMenu.className = 'menu menu_sub';
+//                 }
+//                 subMenu.className = 'menu menu_sub menu_active';
+//                 activeMenu = subMenu;
+
+//                 console.log('3. Подменю ПОСЛЕ: ', subMenu);
+//                 console.log('4. Активное меню ПОСЛЕ: ', activeMenu);
+//                 return false;
+//             }
+//         }    
 
         // console.log('Обрабатываем клики на меню: ', item);
         // subMenu = item.querySelector('.menu_sub');
