@@ -2,8 +2,6 @@ const allMenuItems = Array.from(document.querySelector('.menu_main').querySelect
 
 if (allMenuItems != null) {
 
-    // let activeMenu = null;
-
     allMenuItems.forEach((item) => {
         if (item.querySelector('.menu_sub') !=null) {
             
@@ -22,7 +20,6 @@ if (allMenuItems != null) {
                         activeMenu.className = 'menu menu_sub';
                     }
                     subMenu.className = 'menu menu_sub menu_active';
-                    // activeMenu = subMenu;
                     return false;
                 }
             }
