@@ -3,52 +3,41 @@ const slidersDot = Array.from(document.querySelectorAll('.slider__dot'));
 const slidePrev = document.getElementsByClassName('slider__arrow_prev')[0];
 const slideNext = document.getElementsByClassName('slider__arrow_next')[0];
 
-let numActiveSlide = 0;
-let activeSlide = sliders[numActiveSlide];
-let activeSliderDot = slidersDot[numActiveSlide];
-const countSliders = sliders.length;
-
 console.log(sliders);
-console.log(activeSlide);
-console.log(slidePrev);
-console.log(slideNext);
+console.log(slidersDot);
 
-activeSlide.deActivate = function() {
-    this.className = 'slider__item';
-}
+function nextSlide(searchDirection) {
+    // Поиск активного слайда
+    const activeSlide = sliders.findIndex(slide => slide.className.includes('slider__item_active'));
+    // console.log(activeSlide, sliders[activeSlide]);
 
-activeSlide.Activate = function() {
-    this.className += 'slider__item_active';
-}
+    if (activeSlide != -1) {
+        let nextActiveSlide;
 
-function nextSlide(i) {
-    numActiveSlide = numActiveSlide + i;
-    if (numActiveSlide < 0) {
-        numActiveSlide = countSliders - 1;    
-    } else if (numActiveSlide == countSliders) {
-        numActiveSlide = 0;
+        // Скрытие активного слайда
+        sliders[activeSlide].className = 'slider__item';
+
+        if (searchDirection) {
+            // console.log('Next');
+            // Поиск слайда вперед
+            nextActiveSlide = (activeSlide == (sliders.length-1)) ? 0 : (activeSlide + 1);
+        } else {
+            // console.log('Previuos');
+            // Поиск слайда назад
+            nextActiveSlide = (activeSlide == 0) ? (sliders.length - 1) : (activeSlide - 1);
+        }
+
+        // console.log(nextActiveSlide);
+        sliders[nextActiveSlide].className = 'slider__item slider__item_active';
     }
-
-    console.log(numActiveSlide);
-}
-
-function slideActivate(num) {
-    activeSlide.className = 'slider__item'; 
-    activeSlide = sliders[num];
-    activeSlide.className = 'slider__item slider__item_active';
-    console.log(activeSlide);
 }
 
 slidePrev.onclick = () => {
-    console.log('Previuos');
-    nextSlide(-1);
-    slideActivate(numActiveSlide);
+    nextSlide(0);
 }
 
 slideNext.onclick = () => {
-    console.log('Next');
     nextSlide(1);
-    slideActivate(numActiveSlide);
 }
 
 // function deactivateDot(num) {
@@ -56,12 +45,17 @@ slideNext.onclick = () => {
 //     dot.className = 'slider__dot';
 // }
 
-// for (let dot of slidersDot) {
-//     let num = 0;
-//     dot.onclick = () => {
-//         deactivateDot(numActiveSlide);
-//         dot.className = 'slider__dot slider__dot_active';
-//         numActiveSlide = num;
-//         slideActivate(numActiveSlide)
-//     }
-// }
+for (let dot of slidersDot) {
+    dot.onclick = () => {
+        // Поиск активного слайда
+        const activeSlide = sliders.findIndex(slide => slide.className.includes('slider__item_active'));
+        if (activeSlide != -1) {
+            // Скрытие активного слайда
+            sliders[activeSlide].className = 'slider__item';
+            slidersDot[activeSlide].className = 'slider__dot';
+
+            sliders[slidersDot.indexOf(dot)].className = 'slider__item slider__item_active';
+            dot.className = 'slider__dot slider__dot_active';
+        }
+    }
+}
