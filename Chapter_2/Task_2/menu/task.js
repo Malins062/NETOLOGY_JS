@@ -13,7 +13,10 @@ if (allMenuItems != null) {
                 const subMenu = item.getElementsByClassName('menu_sub')[0];
                 const activeMenu = document.getElementsByClassName('menu_sub menu_active')[0];
 
-                if (subMenu == activeMenu) {return false;}
+                if (subMenu == activeMenu) {
+                    subMenu.className = 'menu menu_sub';
+                    return false;
+                }
 
                 if (subMenu != activeMenu && subMenu != null) {
                     if (activeMenu != null) {
