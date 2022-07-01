@@ -33,3 +33,4 @@
 * [Задание 2.](Chapter_2/Task_2/menu/task.html "Задание 2.2.2")
 * [Задание 3.](Chapter_2/Task_2/slider/task.html "Задание 2.2.3")
 
+2.3. ["Объект события".](Chapter_2/Task_3/README.md "Задание 2.3")
