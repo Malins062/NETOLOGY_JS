@@ -32,4 +32,3 @@
 * [Задание 1.](Chapter_2/Task_2/popups/task.html "Задание 2.2.1")
 * [Задание 2.](Chapter_2/Task_2/menu/task.html "Задание 2.2.2")
 * [Задание 3.](Chapter_2/Task_2/slider/task.html "Задание 2.2.3")
-
