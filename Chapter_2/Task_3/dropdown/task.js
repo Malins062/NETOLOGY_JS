@@ -1,12 +1,12 @@
 const dropdownButtons = Array.from(document.querySelectorAll('.dropdown'));
-console.log(dropdownButtons);
+// console.log(dropdownButtons);
 
 dropdownButtons.forEach((item) => {
     const dropdownList = item.querySelector('.dropdown__list');
-    console.log(dropdownList);
+    // console.log(dropdownList);
 
     const dropdownValue = item.querySelector('.dropdown__value');
-    console.log(dropdownValue);
+    // console.log(dropdownValue);
 
     dropdownValue.addEventListener('click', () => {
         // console.log('click');
@@ -14,18 +14,21 @@ dropdownButtons.forEach((item) => {
     });
 
     const dropdownItems = dropdownList.querySelectorAll('.dropdown__item');
-    console.log(dropdownItems);
+    // console.log(dropdownItems);
 
-    dropdownItems.forEach((item) => {
-        console.log(item);
-        item.addEventListener('click', function () {
+    dropdownItems.forEach((linkItem) => {
+        
+        const aLinkItem = linkItem.getElementsByTagName('a')[0];
+        aLinkItem.onclick = function () {
+            return false;
+        };
+
+        linkItem.addEventListener('click', function () {
             const textContent = this.querySelector('.dropdown__link').textContent.trim();
-            console.log(textContent);
             if (dropdownValue.textContent != textContent) {
                 dropdownValue.textContent = textContent;
             }
             dropdownList.className = 'dropdown__list';
-            return false;    
-    }, true);
+        });
     });
 });

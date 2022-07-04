@@ -5,6 +5,7 @@
   position: relative;
   font-family: Helvetica;
   font-weight: 300;
+  display: inline-block;
 }
 
 .dropdown__value {
