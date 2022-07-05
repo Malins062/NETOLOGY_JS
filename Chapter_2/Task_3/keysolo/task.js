@@ -65,7 +65,7 @@ class Game {
     game.timerElement.textContent = countSeconds;
     
     this.timerId = setInterval(function tick() {
-      console.log(game.timerElement.textContent);
+      // console.log(game.timerElement.textContent);
       if (--game.timerElement.textContent == 0) {
         game.fail();
       } 
