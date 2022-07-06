@@ -38,3 +38,11 @@
 * [Задание 1.](Chapter_2/Task_3/dropdown/task.html "Задание 2.3.1")
 * [Задание 2.](Chapter_2/Task_3/keysolo/task.html "Задание 2.3.2")
 * [Задание 3.](Chapter_2/Task_3/tabs/task.html "Задание 2.3.3")
+
+## 3. Работа с DOM
+
+3.1. ["DOM".](Chapter_3/Task_1/README.md "Задание 3.1")
+
+* [Задание 1.](Chapter_3/Task_1/ads/task.html "Задание 3.1.1")
+* [Задание 2.](Chapter_3/Task_1/book-reader/task.html "Задание 3.1.2")
+* [Задание 3.](Chapter_3/Task_1/reveal/task.html "Задание 3.1.3")
