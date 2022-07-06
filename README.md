@@ -32,3 +32,9 @@
 * [Задание 1.](Chapter_2/Task_2/popups/task.html "Задание 2.2.1")
 * [Задание 2.](Chapter_2/Task_2/menu/task.html "Задание 2.2.2")
 * [Задание 3.](Chapter_2/Task_2/slider/task.html "Задание 2.2.3")
+
+2.3. ["Объект события".](Chapter_2/Task_3/README.md "Задание 2.3")
+
+* [Задание 1.](Chapter_2/Task_3/dropdown/task.html "Задание 2.3.1")
+* [Задание 2.](Chapter_2/Task_3/keysolo/task.html "Задание 2.3.2")
+* [Задание 3.](Chapter_2/Task_3/tabs/task.html "Задание 2.3.3")
