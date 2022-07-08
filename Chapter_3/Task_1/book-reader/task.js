@@ -1,9 +1,10 @@
 // Количество и виды настроек отображения книги
-const bookControls = Array.from(document.querySelectorAll('.book_controls'));
+const bookControls = Array.from(document.querySelectorAll('.book__controls'));
+// console.log(bookControls);
 
 bookControls.forEach((bookControl) => {
     // Каждая из настроек отображения
-    const controls = Array.from(bookControl.querySelectorAll('.book_control'));
+    const controls = Array.from(bookControl.querySelectorAll('.book__control'));
 
     const CONTROLS_SETTINGS = [
         {
@@ -19,17 +20,28 @@ bookControls.forEach((bookControl) => {
             activeClass: 'color_active',
         },
     ]
+    // console.log(CONTROLS_SETTINGS);
 
     // Отработка каждой настройки
-    controls.forEach((control) => {
+    controls.forEach((control, index) => {
         // Виды кнопок
         const buttons = Array.from(control.querySelectorAll('a'));
+        console.log(buttons);
 
         buttons.forEach((button) => {
-            button.addEventListener('click', () => {                
-                button.classList.add('font-size');
-                return false;
-            })
+            // console.log(button);
+            button.addEventListener('click', (event) => {                
+                console.log(button);
+
+                // Деактивация активной кнопки
+                const buttonActive = document.querySelector('.tab_active');       
+                buttonActive.className = 'tab';
+
+                // Активация нажатой кнопки
+                button.classList.add(CONTROLS_SETTINGS[index].activeClass);
+
+                event.preventDefault();
+            });
         })
     });
 
