@@ -3,7 +3,6 @@ const book = document.getElementById('book');
 
 // Количество и виды настроек отображения книги
 const bookControls = Array.from(document.querySelectorAll('.book__controls'));
-// console.log(bookControls);
 
 bookControls.forEach((bookControl) => {
     // Каждая из настроек отображения
