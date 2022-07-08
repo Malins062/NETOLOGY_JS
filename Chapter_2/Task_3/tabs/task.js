@@ -1,19 +1,16 @@
 const tabs = Array.from(document.getElementsByClassName('tab'));
-const tabs_content = Array.from(document.getElementsByClassName('tab__content'));
-
-// console.log(tabs);
-// console.log(tabs_content);
+const tabsContent = Array.from(document.getElementsByClassName('tab__content'));
 
 tabs.forEach((tab) => {
     tab.addEventListener('click', () => {
 
         // Деактивация активной вкладки
-        const tab_active = document.querySelector('.tab_active');       
-        tab_active.className = 'tab';
-        tabs_content[tabs.indexOf(tab_active)].className = 'tab__content';
+        const tabActive = document.querySelector('.tab_active');       
+        tabActive.className = 'tab';
+        tabsContent[tabs.indexOf(tabActive)].className = 'tab__content';
 
         // Активация новой вкладки
         tab.className = 'tab tab_active';
-        tabs_content[tabs.indexOf(tab)].className = 'tab__content tab__content_active';
+        tabsContent[tabs.indexOf(tab)].className = 'tab__content tab__content_active';
     })
 });
