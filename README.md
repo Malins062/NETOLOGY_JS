@@ -46,3 +46,9 @@
 * [Задание 1.](Chapter_3/Task_1/reveal/task.html "Задание 3.1.1")
 * [Задание 2.](Chapter_3/Task_1/ads/task.html "Задание 3.1.2")
 * [Задание 3.](Chapter_3/Task_1/book-reader/task.html "Задание 3.1.3")
+
+3.2. ["Работа с HTML-формами".](Chapter_3/Task_2/README.md "Задание 3.2")
+
+* [Задание 1.](Chapter_3/Task_2/reveal/task.html "Задание 3.2.1")
+* [Задание 2.](Chapter_3/Task_2/ads/task.html "Задание 3.2.2")
+* [Задание 3.](Chapter_3/Task_2/book-reader/task.html "Задание 3.2.3")
