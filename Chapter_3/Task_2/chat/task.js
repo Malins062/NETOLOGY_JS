@@ -128,12 +128,13 @@ class Chat {
     
         // Регистрация отправки сообщения пользователем
         this.inputMessage.addEventListener('keyup', function(event) {
+            // Установка таймера для отслеживания бездействия пользователя
+            chat.setTimerToSleep();
+
             if (event.key == 'Enter' && chat.inputMessage.value.trim().length > 0) {
                 // Отправка сообщения клиента
                 chat.sendMessage(chat.inputMessage.value, true);
 
-                chat.setTimerToSleep();
-                
                 // Очистка сообщения клиента для нового ввода
                 chat.inputMessage.value = '';
 
