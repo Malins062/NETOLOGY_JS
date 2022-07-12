@@ -46,3 +46,9 @@
 * [Задание 1.](Chapter_3/Task_1/reveal/task.html "Задание 3.1.1")
 * [Задание 2.](Chapter_3/Task_1/ads/task.html "Задание 3.1.2")
 * [Задание 3.](Chapter_3/Task_1/book-reader/task.html "Задание 3.1.3")
+
+3.2. ["Работа с HTML-формами".](Chapter_3/Task_2/README.md "Задание 3.2")
+
+* [Текстовый чат.](Chapter_3/Task_2/chat/task.html "Задание 3.2.1")
+* [Дерево интересов.](Chapter_3/Task_2/ads/task.html "Задание 3.2.2")
+* [Выпадающий список с поиском.](Chapter_3/Task_2/book-reader/task.html "Задание 3.2.3")
