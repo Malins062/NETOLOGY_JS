@@ -87,14 +87,20 @@ class Chat {
     }
 
     setTimerToSleep() {
+        /*
+        Метод очистки всех текущих и создание новых таймеров для отслеживания бездействия пользователя
+        */
+
         // Очистка всех таймеров
         clearTimeout(this.timerId);
         clearTimeout(this.timerOutId);
         
+        // Запуск первого таймера для информации пользователя о его бездействии
         this.timerId = setTimeout(() => {
             // Формирование и отправка сообщения робота при бездействии пользователя
             this.sendMessage(this.TEXT_FOR_SLEEP_USER);
 
+            // Запуск второго таймера на для закрытия чата
             this.timerOutId = (setTimeout(() => {
                 // Формирование и отправка сообщения робота при повторном бездействии пользователя
                 this.sendMessage(this.TEXTOUT_FOR_SLEEP_USER);
