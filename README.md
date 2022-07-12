@@ -23,29 +23,29 @@
 
 2.1. ["Возможности JavaScript в браузере".](Chapter_2/Task_1/README.md "Задание 2.1")
 
-* [Задание 1.](Chapter_2/Task_1/countdown/task.html "Задание 2.1.1")
-* [Задание 2.](Chapter_2/Task_1/cookie-clicker/task.html "Задание 2.1.2")
-* [Задание 3.](Chapter_2/Task_1/mole-game/task.html "Задание 2.1.3")
+* [Таймер обратного отсчёта.](Chapter_2/Task_1/countdown/task.html "Задание 2.1.1")
+* [Игра-кликер.](Chapter_2/Task_1/cookie-clicker/task.html "Задание 2.1.2")
+* [Игра «Убей кротов».](Chapter_2/Task_1/mole-game/task.html "Задание 2.1.3")
 
 2.2. ["Способы поиска нужного HTML-элемента".](Chapter_2/Task_2/README.md "Задание 2.2")
 
-* [Задание 1.](Chapter_2/Task_2/popups/task.html "Задание 2.2.1")
-* [Задание 2.](Chapter_2/Task_2/menu/task.html "Задание 2.2.2")
-* [Задание 3.](Chapter_2/Task_2/slider/task.html "Задание 2.2.3")
+* [Всплывающие окна.](Chapter_2/Task_2/popups/task.html "Задание 2.2.1")
+* [Навигационное меню.](Chapter_2/Task_2/menu/task.html "Задание 2.2.2")
+* [Слайдер изображений.](Chapter_2/Task_2/slider/task.html "Задание 2.2.3")
 
 2.3. ["Объект события".](Chapter_2/Task_3/README.md "Задание 2.3")
 
-* [Задание 1.](Chapter_2/Task_3/dropdown/task.html "Задание 2.3.1")
-* [Задание 2.](Chapter_2/Task_3/keysolo/task.html "Задание 2.3.2")
-* [Задание 3.](Chapter_2/Task_3/tabs/task.html "Задание 2.3.3")
+* [Выпадающие списки.](Chapter_2/Task_3/dropdown/task.html "Задание 2.3.1")
+* [Соло на клавиатуре.](Chapter_2/Task_3/keysolo/task.html "Задание 2.3.2")
+* [Вкладки.](Chapter_2/Task_3/tabs/task.html "Задание 2.3.3")
 
 ## 3. Работа с DOM
 
 3.1. ["DOM".](Chapter_3/Task_1/README.md "Задание 3.1")
 
-* [Задание 1.](Chapter_3/Task_1/reveal/task.html "Задание 3.1.1")
-* [Задание 2.](Chapter_3/Task_1/ads/task.html "Задание 3.1.2")
-* [Задание 3.](Chapter_3/Task_1/book-reader/task.html "Задание 3.1.3")
+* [Появление элементов при прокрутке.](Chapter_3/Task_1/reveal/task.html "Задание 3.1.1")
+* [Ротатор рекламы.](Chapter_3/Task_1/ads/task.html "Задание 3.1.2")
+* [Онлайн-читалка.](Chapter_3/Task_1/book-reader/task.html "Задание 3.1.3")
 
 3.2. ["Работа с HTML-формами".](Chapter_3/Task_2/README.md "Задание 3.2")
 
