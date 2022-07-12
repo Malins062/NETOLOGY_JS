@@ -51,4 +51,4 @@
 
 * [Текстовый чат.](Chapter_3/Task_2/chat/task.html "Задание 3.2.1")
 * [Дерево интересов.](Chapter_3/Task_2/ads/task.html "Задание 3.2.2")
-* [Задание 3.](Chapter_3/Task_2/book-reader/task.html "Задание 3.2.3")
+* [Выпадающий список с поиском.](Chapter_3/Task_2/book-reader/task.html "Задание 3.2.3")
