@@ -1,6 +1,15 @@
 body {
   font-family: Arial;
 }
+
+.cart {
+  display: none;
+}
+
+.cart_active {
+  display: flex;
+}
+
 .cart__products {
   display: flex;
   justify-content: center;
