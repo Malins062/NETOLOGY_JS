@@ -30,6 +30,9 @@ class Basket {
     Basket - класс для хранения данных о корзине продуктов со свойствами:
         basketProducts - массив объектов класса BasketProduct для хранения данных о продуктах в корзине
 
+        readBasket() - считывание из куков сохраненной корзины и вывод
+        saveBasket() - сохранение текущей корзины в куки
+
         add(product, amount) - добавляет продукт в корзину, если продукт уже есть увеличивает количество
         remove(product, amount) - уменьшает количество продуктов в корзине, 
                                   если количество становится равным нулю, продукт удаляется,
@@ -43,11 +46,37 @@ class Basket {
         // Контейнер корзины
         this.container = container;
 
+        // Контейнер списка продуктов в корзине
+        this.cartProducts = this.container.querySelector('.cart__products');
+
+        // Хранилище куков
+        this.data = window.localStorage;
+
         // Кэш корзины
         this.#basketProducts = []
 
-        // Контейнер списка продуктов в корзине
-        this.cartProducts = this.container.querySelector('.cart__products');
+        // Чтение данных корзины из куков
+        this.readBasket();
+    }
+
+    readBasket () {
+        // data.removeItem(this.container.className);
+
+        // Чтение сохраненных данных
+        const res = this.data.getItem(this.cartProducts.className);
+
+        // Обработка данных
+        const activeProducts = res ? JSON.parse(res) : [];
+
+        // Вывод списка сохраненных задач
+        activeProducts.forEach(item => this.add({id: item.id, title: item.title, image: item.image}, item.quantity));
+        // console.log('Считанная корзина: ', this.#basketProducts);
+    }
+
+    saveBasket () {
+        // Сохранение массива задач в localStorage
+        this.data.setItem(this.cartProducts.className, JSON.stringify(this.#basketProducts));
+        // console.log('Сохраненная корзина: ', this.#basketProducts);
     }
 
     add (product, amount) {
@@ -75,6 +104,9 @@ class Basket {
             // Показывать корзину
             this.container.className = 'cart cart_active';
         }
+
+        // Сохранение корзины
+        this.saveBasket();
     }
 
     remove (product, amount=0) {
@@ -101,6 +133,9 @@ class Basket {
                 // Изменение HTML-элемента
                 cartProduct.querySelector('.cart__product-count').textContent = this.#basketProducts[_index].quantity;
             }
+
+            // Сохранение корзины
+            this.saveBasket();
         } else {
             console.log(`Функция Basket.remove: не найден продукт с id = ${product.id}`)
         }
@@ -176,8 +211,7 @@ class ProductsList {
             const newProduct = new ListProduct(id, title, image, quantity);
             this.add(newProduct);    
         });   
-
-        console.log('Список продуктов: ', this.#products);
+        // console.log('Список продуктов: ', this.#products);
 
         // Обработчик событий
         this.registerEvents();    
