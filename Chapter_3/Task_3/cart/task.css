@@ -95,6 +95,19 @@ body {
   opacity: 0.8;
 }
 
+.product__remove {
+  background: red;
+  margin-top: 2px;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product__remove:hover {
+  opacity: 0.8;
+}
+
 .product-shadow {
   position: absolute;
 }

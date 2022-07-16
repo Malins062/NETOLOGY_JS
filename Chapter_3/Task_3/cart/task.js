@@ -28,52 +28,106 @@ class BasketProduct extends Product {
 class Basket {
     /*
     Basket - класс для хранения данных о корзине продуктов со свойствами:
-        products - массив объектов класса BasketProduct для хранения данных о продуктах в корзине
+        basketProducts - массив объектов класса BasketProduct для хранения данных о продуктах в корзине
 
         add(product, amount) - добавляет продукт в корзину, если продукт уже есть увеличивает количество
         remove(product, amount) - уменьшает количество продуктов в корзине, 
                                   если количество становится равным нулю, продукт удаляется,
                                   продукт также удаляется, если параметр amount=0 или не задан
-        clear() - очищает содержимое корзины
+        create(basketProduct) - создает HTML элемент продукта в корзине
     */
+   
+    #basketProducts;
 
-    constructor () {
-        this.products = []
-        console.log('Корзина - ', this.products);
+    constructor (container) {
+        // Контейнер корзины
+        this.container = container;
+
+        // Кэш корзины
+        this.#basketProducts = []
+
+        // Контейнер списка продуктов в корзине
+        this.cartProducts = this.container.querySelector('.cart__products');
     }
 
     add (product, amount) {
-        const _index = this.products.findIndex(value => value.id === product.id)
+        const _index = this.#basketProducts.findIndex(value => value.id === product.id)
         if (_index >= 0) {
             // Добавление количества, уже существующего, продукта в корзине
-            this.products[_index].quantity += amount;
+            this.#basketProducts[_index].quantity += amount;
+
+            // HTML-элемент продукта в корзине
+            const cartProduct = this.cartProducts.querySelector(`.cart__product[data-id="${product.id}"]`);
+            
+            // Изменение количества в HTML-эдемента корзины
+            cartProduct.querySelector('.cart__product-count').textContent = this.#basketProducts[_index].quantity;
         } else {
             // Добавление нового продукта в корзину
             const newBasketProduct = new BasketProduct(product.id, product.title, product.image, amount);
-            this.products.push(newBasketProduct);
+            this.#basketProducts.push(newBasketProduct);
+
+            // Создание html-элемента нового продукта в корзине
+            const newProduct = this.create(newBasketProduct);
+
+            // Добавление продукта в конец корзины
+            this.cartProducts.insertAdjacentElement('beforeEnd', newProduct);  
+            
+            // Показывать корзину
+            this.container.className = 'cart cart_active';
         }
-        console.log('Корзина - ', this.products);
     }
 
     remove (product, amount=0) {
-        const _index = this.products.findIndex(value => value.id === product.id)
+        // HTML-элемент продукта в корзине
+        const cartProduct = this.container.querySelector(`.cart__product[data-id="${product.id}"]`);
+
+        const _index = this.#basketProducts.findIndex(value => value.id === product.id)
         if (_index >= 0) {
-            if (this.products[_index].quantity - amount <= 0 || amount === 0){
-                // Удаление проудкта из корзины
-                this.products.splice(_index, 1);
+            if (this.#basketProducts[_index].quantity - amount <= 0 || amount === 0){
+                // Удаление продукта из корзины
+                this.#basketProducts.splice(_index, 1);
+
+                // Удаление продукта из корзины
+                this.cartProducts.children[_index].remove();  
+                
+                // Скрытие корзины если все товары удалены
+                if (this.#basketProducts.length <= 0) {
+                    this.container.className = 'cart';
+                }
             } else {
                 // Изменение количества продукта в корзине
-                this.products[_index].quantity -= amount;
+                this.#basketProducts[_index].quantity -= amount;
+
+                // Изменение HTML-элемента
+                cartProduct.querySelector('.cart__product-count').textContent = this.#basketProducts[_index].quantity;
             }
         } else {
             console.log(`Функция Basket.remove: не найден продукт с id = ${product.id}`)
         }
-        console.log('Корзина - ', this.products);
     }
 
-    clear () {
-        this.products.length = 0;
+    create (basketProduct) {
+        /*
+        Метод создания html-элемента продукта
+        */
+
+        // Создание родительского div-элемента продукта
+        const productElement = document.createElement('div');
+        productElement.className = 'cart__product'; 
+        productElement.dataset.id = basketProduct.id;      
+        
+        // Создание фотки продукта 
+        const productImage = `<img class="cart__product-image" src="${basketProduct.image}">`;
+
+        // Создание количества продукта в корзине 
+        const productCount = `<div class="cart__product-count">${basketProduct.quantity}</div>`;
+
+        productElement.insertAdjacentHTML('afterBegin', productImage);
+        productElement.insertAdjacentHTML('beforeEnd', productCount);
+    
+        return productElement;
     }
+
 }
 
 class ListProduct extends Product {
@@ -108,13 +162,13 @@ class ProductsList {
         this.container = container;
 
         // Корзина
-        this.basket = new Basket();
+        this.basket = new Basket(document.querySelector('.cart'));
 
         // Список продуктов
-        this.products = Array.from(this.container.querySelectorAll('.product'));
+        this.listProducts = Array.from(this.container.querySelectorAll('.product'));
 
         // Заполнение текущего кэш-списка продуктов
-        this.products.forEach(element => {
+        this.listProducts.forEach(element => {
             const id = element.dataset.id;
             const title = element.querySelector('.product__title').textContent.trim();
             const image = element.querySelector('.product__image').src;
@@ -139,39 +193,46 @@ class ProductsList {
     }
 
     registerEvents () {
-        const products = this.container;
+        const container = this.container;
 
+        // Обработка событий на все доступные продукты в каталоге
         this.#products.forEach((item) => {
-            const product = this.container.querySelector(`.product[data-id="${item.id}"]`);
-            console.log(product)
+            // Экзмепляр продукта в каталоге
+            const product = container.querySelector(`.product[data-id="${item.id}"]`);
 
+            // Определение управляющих элементов для текущего продукта
             const quantityInc = product.querySelector('.product__quantity-control_inc');
             const quantityDec = product.querySelector('.product__quantity-control_dec');
             const quantityValue = product.querySelector('.product__quantity-value');
             const productAdd = product.querySelector('.product__add');
+            const productRemove = product.querySelector('.product__remove');
 
+            // Добавление количества продукта
             quantityDec.addEventListener('click', () => {
                 if (--item.quantity < 1) {
                     item.quantity = 1;
                 }
 
-                console.log('Список продуктов: ', this.#products);
-
                 quantityValue.textContent = item.quantity;
             });
 
+            // Уменьшение количества продукта
             quantityInc.addEventListener('click', () => {
                 if (++item.quantity > item.quantityMax) {
                     item.quantity = item.quantityMax;
                 }
 
-                console.log('Список продуктов: ', this.#products);
-
                 quantityValue.textContent = item.quantity;
             });
 
+            // Добавить в корзину
             productAdd.addEventListener('click', () => {
-                this.basket.add({id: item.id, title: item.title, image: item.image}, item.quantity);
+                this.basket.add({id: item.id, title: item.title, image: item.image}, Number(item.quantity));
+            });
+
+            // Удалить из корзины
+            productRemove.addEventListener('click', () => {
+                this.basket.remove({id: item.id, title: item.title, image: item.image}, Number(item.quantity));
             });
         })
     }
