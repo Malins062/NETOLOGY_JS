@@ -46,9 +46,14 @@
 * [Появление элементов при прокрутке.](Chapter_3/Task_1/reveal/task.html "Задание 3.1.1")
 * [Ротатор рекламы.](Chapter_3/Task_1/ads/task.html "Задание 3.1.2")
 * [Онлайн-читалка.](Chapter_3/Task_1/book-reader/task.html "Задание 3.1.3")
-
 3.2. ["Работа с HTML-формами".](Chapter_3/Task_2/README.md "Задание 3.2")
 
 * [Текстовый чат.](Chapter_3/Task_2/chat/task.html "Задание 3.2.1")
 * [Дерево интересов.](Chapter_3/Task_2/interests/task.html "Задание 3.2.2")
 * [Выпадающий список с поиском.](Chapter_3/Task_2/autocomplete/task.html "Задание 3.2.3")
+
+3.3. ["Изменение структуры HTML-документа".](Chapter_3/Task_3/README.md "Задание 3.3")
+
+* [Визуальные подсказки.](Chapter_3/Task_3/tooltip/task.html "Задание 3.3.1")
+* [Простой список дел.](Chapter_3/Task_3/todo/task.html "Задание 3.3.2")
+* [Корзина товаров.](Chapter_3/Task_3/cart/task.html "Задание 3.3.3")
