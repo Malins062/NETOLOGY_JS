@@ -70,13 +70,11 @@ class Basket {
 
         // Вывод списка сохраненных задач
         activeProducts.forEach(item => this.add({id: item.id, title: item.title, image: item.image}, item.quantity));
-        // console.log('Считанная корзина: ', this.#basketProducts);
     }
 
     saveBasket () {
         // Сохранение массива задач в localStorage
         this.data.setItem(this.cartProducts.className, JSON.stringify(this.#basketProducts));
-        // console.log('Сохраненная корзина: ', this.#basketProducts);
     }
 
     add (product, amount) {
