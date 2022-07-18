@@ -1,5 +1,5 @@
 // Ключ данных для локального сохранения данных
-DATA_KEY = 'netologyTasks';
+const DATA_KEY = 'netologyTasks';
 
 class HandlerTasks {
     /*
