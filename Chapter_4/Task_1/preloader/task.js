@@ -55,7 +55,7 @@ class ExchangeRate {
             this.refreshItems();
         }
 
-        console.log(this.container, this.#listCurrencies)
+        // console.log(this.container, this.#listCurrencies)
         this.registerEvents();
     }
 
@@ -69,7 +69,7 @@ class ExchangeRate {
                 // Обновление данных о валюте
                 this.#listCurrencies = xhr.response.response.Valute;
                 this.refreshItems();
-                console.log(this.#listCurrencies);
+                // console.log(this.#listCurrencies);
 
                 this.dataStorage.save(this.#listCurrencies);
    
