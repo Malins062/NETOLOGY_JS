@@ -65,4 +65,4 @@
 
 * [Анимация загрузки данных.](Chapter_4/Task_1/preloader/task.html "Задание 4.1.1")
 * [Опрос с выбором результатов.](Chapter_4/Task_1/poll/task.html "Задание 4.1.2")
-* [Онлайн-читалка.](Chapter_4/Task_1/progressbar/task.html "Задание 4.1.3")
+* [Загрузка больших файлов.](Chapter_4/Task_1/progressbar/task.html "Задание 4.1.3")
