@@ -46,6 +46,7 @@
 * [Появление элементов при прокрутке.](Chapter_3/Task_1/reveal/task.html "Задание 3.1.1")
 * [Ротатор рекламы.](Chapter_3/Task_1/ads/task.html "Задание 3.1.2")
 * [Онлайн-читалка.](Chapter_3/Task_1/book-reader/task.html "Задание 3.1.3")
+
 3.2. ["Работа с HTML-формами".](Chapter_3/Task_2/README.md "Задание 3.2")
 
 * [Текстовый чат.](Chapter_3/Task_2/chat/task.html "Задание 3.2.1")
@@ -57,3 +58,11 @@
 * [Визуальные подсказки.](Chapter_3/Task_3/tooltip/task.html "Задание 3.3.1")
 * [Простой список дел.](Chapter_3/Task_3/todo/task.html "Задание 3.3.2")
 * [Корзина товаров.](Chapter_3/Task_3/cart/task.html "Задание 3.3.3")
+
+## 4. Работа с состоянием
+
+4.1. ["Асинхронные запросы".](Chapter_4/Task_1/README.md "Задание 4.1")
+
+* [Анимация загрузки данных.](Chapter_4/Task_1/preloader/task.html "Задание 4.1.1")
+* [Опрос с выбором результатов.](Chapter_4/Task_1/poll/task.html "Задание 4.1.2")
+* [Загрузка больших файлов.](Chapter_4/Task_1/progressbar/task.html "Задание 4.1.3")
