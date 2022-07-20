@@ -9,3 +9,49 @@ body {
 .poll__title {
   margin-bottom: 20px;
 }
+
+.poll__close {
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width:100%;
+  height:100%;
+  text-align:center;
+  z-index: 1000;
+}
+
+.poll__close div {
+  width:350px;
+  height: 80px;
+  margin: 100px auto;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius:  10px;
+  border:1px solid #666666;
+  padding:15px;
+  text-align:center;
+  font-weight: bold;
+  font-size: 15px;
+  border: 3px solid #cccccc;
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.poll__result_title {
+  display: inline-block;
+}
+
+.poll__result_value {
+  display: inline-block;
+  font-weight: bold;
+}
+
+.poll__result {
+  display: block;
+}
