@@ -64,19 +64,28 @@ class ExchangeRate {
 
         const container = this.container;
         
-        xhr.addEventListener('readystatechange', () => {
-            if (xhr.readyState == xhr.DONE) {
-                // Обновление данных о валюте
-                this.#listCurrencies = xhr.response.response.Valute;
-                this.refreshItems();
-                // console.log(this.#listCurrencies);
+        xhr.addEventListener('error', () => {
+            alert(`Ошибка:  запрос не может быть выполнен, нет соединения или невалидный URL - ${this.url}.`);
 
-                this.dataStorage.save(this.#listCurrencies);
-   
-                // Деактивация прогресс-бара
-                const progressBar = container.querySelector('.loader_active');
-                progressBar.className = 'loader';
-            }
+            // Деактивация прогресс-бара
+            const progressBar = container.querySelector('.loader_active');
+            progressBar.className = 'loader';
+        });
+
+        xhr.addEventListener('load', () => {
+        // xhr.addEventListener('readystatechange', () => {
+            // if (xhr.readyState == xhr.DONE) {
+            // Обновление данных о валюте
+            this.#listCurrencies = xhr.response.response.Valute;
+            this.refreshItems();
+            // console.log(this.#listCurrencies);
+
+            this.dataStorage.save(this.#listCurrencies);
+
+            // Деактивация прогресс-бара
+            const progressBar = container.querySelector('.loader_active');
+            progressBar.className = 'loader';
+            // }
         });
 
         xhr.open('GET', this.url);
