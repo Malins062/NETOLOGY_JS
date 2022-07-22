@@ -66,3 +66,9 @@
 * [Анимация загрузки данных.](Chapter_4/Task_1/preloader/task.html "Задание 4.1.1")
 * [Опрос с выбором результатов.](Chapter_4/Task_1/poll/task.html "Задание 4.1.2")
 * [Загрузка больших файлов.](Chapter_4/Task_1/progressbar/task.html "Задание 4.1.3")
+
+4.2. ["Хранение состояния на клиенте и отправка на сервер".](Chapter_4/Task_2/README.md "Задание 4.2")
+
+* [Текстовый редактор.](Chapter_4/Task_2/text-editor/task.html "Задание 4.2.1")
+* [Всплывающее один раз окно.](Chapter_4/Task_2/popup/task.html "Задание 4.2.2")
+* [Авторизация.](Chapter_4/Task_2/auth/task.html "Задание 4.2.3")
