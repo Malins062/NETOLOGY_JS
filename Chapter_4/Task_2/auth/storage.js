@@ -10,7 +10,7 @@ class Storage {
         this.localStorage = window.localStorage;
     }
 
-    read (dataKey) {
+    readItem (dataKey) {
         const data = this.localStorage.getItem(dataKey);
         try {
             return JSON.parse(data);
@@ -19,7 +19,7 @@ class Storage {
         }
     }
 
-    write (dataKey, data) {
+    writeItem (dataKey, data) {
         try {
             this.localStorage.setItem(dataKey, JSON.stringify(data));
         } catch(e) {
@@ -27,7 +27,7 @@ class Storage {
         }
     }
 
-    remove (dataKey) {
+    removeItem (dataKey) {
         try {
             this.localStorage.removeItem(dataKey);
         } catch(e) {
