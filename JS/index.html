@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript: основы работы в браузере</title>
+
+    <style>
+        ol {
+            list-style: none;
+            counter-reset: li;
+        }
+        li:before {
+            counter-increment: li;
+            content: counters(li, ".") ". ";
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>JavaScript: основы работы в браузере</h1>
+
+    <p>Респозитарий домашних заданий по курсу НЕТОЛОГИИ "FullStack-разработчик на Python", раздел "JavaScript: основы работы в браузере"
+    </p>
+
+    <ol>
+        <li>Основы JavaScript
+            <ol>
+                <li>
+                    Основы синтаксиса, типы данных, условный оператор
+                </li>
+                <li>
+                    Операторы цикла, функции и объекты  
+                </li>
+                <li>
+                    Прототипы, ООП и функции высшего порядка    
+                </li>
+                <li>
+                    Обработка ошибок, замыкания и асинхронность   
+                </li>
+            </ol>
+        </li>
+        <li>Основы разработки интерфейсов
+            <ol>
+                <li>Возможности JavaScript в браузере
+                    <ol>
+                        <li>
+                            <a href="Chapter_2/Task_1/countdown/task.html" title="Задание 2.1.1">Таймер обратного отсчёта.</a>
+                        </li>
+                        <li>
+                            <a href="Chapter_2/Task_1/cookie-clicker/task.html" title="Задание 2.1.2">Игра-кликер.</a>
+                        </li>
+                        <li>
+                            <a href="Chapter_2/Task_1/mole-game/task.html" title="Задание 2.1.3">Игра «Убей кротов».</a>
+                        </li>
+                    </ol>
+                </li>
+                <li>Способы поиска нужного HTML-элемента
+                    <ol>
+                        <li>
+                            <a href="Chapter_2/Task_2/popups/task.html" title="Задание 2.2.1">Всплывающие окна.</a>
+                        </li>
+                        <li>
+                            <a href="Chapter_2/Task_2/menu/task.html" title="Задание 2.2.2">Навигационное меню.</a>
+                        </li>
+                        <li>
+                            <a href="Chapter_2/Task_2/slider/task.html" title="Задание 2.2.3">Слайдер изображений.</a>
+                        </li>
+                    </ol>
+                </li>
+                <li>Объект события
+                    <ol>
+                        <li>
+                            <a href="Chapter_2/Task_3/dropdown/task.html" title="Задание 2.3.1">Выпадающие списки.</a>
+                        </li>
+                        <li>
+                            <a href="Chapter_2/Task_3/keysolo/task.html" title="Задание 2.3.2">Соло на клавиатуре.</a>
+                        </li>
+                        <li>
+                            <a href="Chapter_2/Task_3/tabs/task.html" title="Задание 2.3.3">Вкладки.</a>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+        <li>Работа с DOM
+            <ol>
+                <li>DOM
+                    <ol>
+                        <li>
+                            <a href="Chapter_3/Task_1/reveal/task.html" title="Задание 3.1.1">Появление элементов при прокрутке.</a>
+                        </li>
+                        <li>
+                            <a href="Chapter_3/Task_1/ads/task.html" title="Задание 3.1.2">Ротатор рекламы.</a>
+                        </li>
+                        <li>
+                            <a href="Chapter_3/Task_1/book-reader/task.html" title="Задание 3.1.3">Онлайн-читалка.</a>
+                        </li>
+                    </ol>
+                </li>
+                <li>Работа с HTML-формами
+                    <ol>
+                        <li>
+                            <a href="Chapter_3/Task_2/chat/task.html" title="Задание 3.2.1">Текстовый чат.</a>
+                        </li>
+                        <li>
+                            <a href="Chapter_3/Task_2/interests/task.html" title="Задание 3.2.2">Дерево интересов.</a>
+                        </li>
+                        <li>
+                            <a href="Chapter_3/Task_2/autocomplete/task.html" title="Задание 3.2.3">Выпадающий список с поиском.</a>
+                        </li>
+                    </ol>
+                </li>
+                <li>Изменение структуры HTML-документа
+                    <ol>
+                        <li>
+                            <a href="Chapter_3/Task_3/tooltip/task.html" title="Задание 3.3.1">Визуальные подсказки.</a>
+                        </li>
+                        <li>
+                            <a href="Chapter_3/Task_3/todo/task.html" title="Задание 3.3.2">Простой список дел.</a>
+                        </li>
+                        <li>
+                            <a href="Chapter_3/Task_3/cart/task.html" title="Задание 3.3.3">Корзина товаров.</a>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+        <li>Работа с состоянием
+            <ol>
+                <li>Асинхронные запросы
+                    <ol>
+                        <li>
+                            <a href="Chapter_4/Task_1/preloader/task.html" title="Задание 4.1.1">Анимация загрузки данных.</a>
+                        </li>
+                    <li>
+                            <a href="Chapter_4/Task_1/poll/task.html" title="Задание 4.1.2">Опрос с выбором результатов.</a>
+                        </li>
+                        <li>
+                            <a href="Chapter_4/Task_1/progressbar/task.html" title="Задание 4.1.3">Загрузка больших файлов.</a>
+                        </li>
+                    </ol>
+                </li>
+                <li>Хранение состояния на клиенте и отправка на сервер
+                    <ol>
+                        <li>
+                            <a href="Chapter_4/Task_2/text-editor/task.html" title="Задание 4.2.1">Текстовый редактор.</a>
+                        </li>
+                        <li>
+                            <a href="Chapter_4/Task_2/poup/task.html" title="Задание 4.2.2">Всплывающее один раз окно.</a>
+                        </li>
+                        <li>
+                            <a href="Chapter_4/Task_2/auth/task.html" title="Задание 4.2.3">Авторизация.</a>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+    </ol>
+
+</body>
+</html>
