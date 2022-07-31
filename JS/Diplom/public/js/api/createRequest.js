@@ -37,6 +37,7 @@ const createRequest = (options = {}) => {
         });
     }
 
+    console.log(url);
     xhr.open(options.method, url ? url : options.url);
     xhr.responseType = 'json';
     // fomData ? xhr.send(formData) : xhr.send();
@@ -45,7 +46,7 @@ const createRequest = (options = {}) => {
 
 // Пример вызова функции:
 createRequest({
-    url: 'https://example.com', // адрес
+    url: 'http://localhost:8000', // адрес
     data: { // произвольные данные, могут отсутствовать
       email: 'ivan@poselok.ru',
       password: 'odinodin'
