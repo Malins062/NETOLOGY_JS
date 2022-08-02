@@ -46,7 +46,7 @@ const createRequest = (options = {}) => {
 
 // Пример вызова функции:
 createRequest({
-    url: 'http://localhost:8000', // адрес
+    url: 'http://localhost:8000/', // адрес
     data: { // произвольные данные, могут отсутствовать
       email: 'ivan@poselok.ru',
       password: 'odinodin'

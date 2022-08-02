@@ -18,6 +18,8 @@ class Sidebar {
    * при нажатии на кнопку .sidebar-toggle
    * */
   static initToggleButton() {
+    const sidebarToggle = document.querySelector('.sidebar-toggle a');
+    console.log(sidebarToggle);
 
   }
 
@@ -32,3 +34,5 @@ class Sidebar {
 
   }
 }
+
+Sidebar.init();
