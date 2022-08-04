@@ -1,6 +1,6 @@
 {
-  "name": "@malins062/ajs_packet",
-  "version": "1.0.1",
+  "name": "@malins062/ajs",
+  "version": "1.0.3",
   "description": "**Важно**: каждая задача выполняется в виде отдельного проекта с собственным GitHub репозиторием.",
   "main": "dist/index.js",
 
@@ -11,22 +11,22 @@
 
   "scripts": {
     "build": "webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js"
   },
 
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Malins062/ajs_packet.git"
+    "url": "git+https://github.com/Malins062/ajs.git"
   },
 
   "author": "Alexei Malinovskiy",
   "license": "ISC",
 
   "bugs": {
-    "url": "https://github.com/Malins062/ajs_packet/issues"
+    "url": "https://github.com/Malins062/ajs/issues"
   },
 
-  "homepage": "https://github.com/Malins062/ajs_packet#readme",
+  "homepage": "https://github.com/Malins062/ajs#readme",
   
   "dependencies": {
     "@babel/cli": "^7.18.10",
