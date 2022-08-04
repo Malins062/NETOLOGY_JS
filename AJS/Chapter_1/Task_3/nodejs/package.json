@@ -2,11 +2,22 @@
   "name": "nodejs",
   "version": "1.0.0",
   "description": "Testing ajs packet",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js", 
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "build": "webpack --mode production"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Malins062/NETOLOGY_JS.git#ajs_1_3"
+  },
+  "keywords": [
+    "ajs"
+  ],
   "author": "Alexei Malinovskiy",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Malins062/NETOLOGY_JS/issues"
+  },
+  "homepage": "https://github.com/Malins062/NETOLOGY_JS/tree/ajs_1_3#readme"
 }
