@@ -1,7 +1,7 @@
 {
   "name": "nodejs",
   "version": "1.0.0",
-  "description": "Testing ajs_packet",
+  "description": "Testing ajs packet",
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js", 
