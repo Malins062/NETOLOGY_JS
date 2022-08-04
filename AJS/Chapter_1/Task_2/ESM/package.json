@@ -1,0 +1,26 @@
+{
+  "name": "game",
+  "version": "1.0.0",
+  "description": "Testing game",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server ./src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Malins062/NETOLOGY_JS.git#ajs_1_2"
+  },
+  "keywords": [
+    "game"
+  ],
+  "author": "Alexei Malinovskiy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Malins062/NETOLOGY_JS/issues"
+  },
+  "homepage": "https://github.com/Malins062/NETOLOGY_JS/tree/ajs_1_2#readme",
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}
