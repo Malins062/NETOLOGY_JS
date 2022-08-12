@@ -32,7 +32,7 @@ test.each([
     },
   ],
 ])(
-  ('create Character testing'),
+  ('Create hero, testing class Character'),
   (params, recieved) => {
     const expected = new Character(...params);
 
