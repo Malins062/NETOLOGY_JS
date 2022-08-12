@@ -1,7 +1,7 @@
 {
   "name": "ajs-classes",
   "version": "1.0.0",
-  "description": "JavaScript classes",
+  "description": "JavaScript classes and inheritance",
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development",
@@ -11,17 +11,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Malins062/ajs-unit-tests.git"
+    "url": "git+https://github.com/Malins062/NETOLOGY_JS/tree/ajs_2_1/AJS/Chapter_2/Task_1/classes"
   },
   "keywords": [
-    "tests"
+    "classes",
+    "inheritance"
   ],
   "author": "Alexei Malinovskiy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Malins062/ajs-unit-tests/issues"
+    "url": "https://github.com/Malins062/NETOLOGY_JS/tree/ajs_2_1/AJS/Chapter_2/Task_1/classes/issues"
   },
-  "homepage": "https://github.com/Malins062/ajs-unit-tests#readme",
+  "homepage": "https://github.com/Malins062/NETOLOGY_JS/tree/ajs_2_1/AJS/Chapter_2/Task_1/classes#readme",
   "devDependencies": {
     "@babel/cli": "^7.18.10",
     "@babel/core": "^7.18.10",
