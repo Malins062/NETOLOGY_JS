@@ -1,10 +1,10 @@
-import Character from '../character';
+import Character, { ERRORS } from '../character';
 
 test.each([
   [
     ['Alex', 'Bowerman', 0, 1, 25, 25],
     {
-      level: 0, attack: 25, defence: 25, health: 100,
+      level: 1, attack: 25, defence: 25, health: 100,
     },
   ],
   [
@@ -22,21 +22,20 @@ test.each([
 ])(
   ('Testing method "levelUp", testing class Character'),
   (params, recieved) => {
-    const hero = new Character(...params);
+    try {
+      const hero = new Character(...params);
+      hero.levelUp();
 
-    hero.levelUp();
+      const expected = {
+        level: hero.level,
+        attack: hero.attack,
+        defence: hero.defence,
+        health: hero.health,
+      };
 
-    const expected = {
-      level: hero.level,
-      attack: hero.attack,
-      defence: hero.defence,
-      health: hero.health,
-    };
-
-    if (recieved.level === 0) {
-      expect(expected).toThrow();
-    } else {
       expect(expected).toEqual(recieved);
+    } catch (error) {
+      expect(error.message).toBe(ERRORS.levelup);
     }
   },
 );

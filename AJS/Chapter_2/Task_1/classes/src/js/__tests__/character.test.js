@@ -1,4 +1,4 @@
-import Character from '../character';
+import Character, { ERRORS } from '../character';
 
 test.each([
   [
@@ -34,8 +34,11 @@ test.each([
 ])(
   ('Create hero, testing class Character'),
   (params, recieved) => {
-    const expected = new Character(...params);
-
-    expect(expected).toEqual(recieved);
+    try {
+      const expected = new Character(...params);
+      expect(expected).toEqual(recieved);
+    } catch (error) {
+      expect([ERRORS.name, ERRORS.type]).toContain(error.message);
+    }
   },
 );
