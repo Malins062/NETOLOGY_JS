@@ -1,10 +1,10 @@
 import Character from './character';
 
-export default class Zombie extends Character {
+export default class Daemon extends Character {
   constructor(name) {
     super(
       name,
-      'Zombie',
+      'Daemon',
       100,
       1,
       10,

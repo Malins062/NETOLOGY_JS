@@ -2,7 +2,7 @@ import Magician from '../magician';
 
 test.each([
   [
-    'Piter',
+    'Craus',
     {
       name: 'Craus', type: 'Magician', health: 100, level: 1, attack: 10, defence: 40,
     },
