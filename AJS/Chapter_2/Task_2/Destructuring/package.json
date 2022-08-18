@@ -1,7 +1,7 @@
 {
-  "name": "ajs-object-reflection-proxy",
+  "name": "ajs-destructuring",
   "version": "1.0.0",
-  "description": "JavaScript object-reflection-proxy",
+  "description": "JavaScript object, destructuring",
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development",
@@ -11,19 +11,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Malins062/ajs-object-reflection-proxy.git"
+    "url": "git+https://github.com/Malins062/ajs-destructuring.git"
   },
   "keywords": [
     "objects",
+    "destructuring",
     "reflection",
     "proxy"
   ],
   "author": "Alexei Malinovskiy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Malins062/ajs-object-reflection-proxy/issues"
+    "url": "https://github.com/Malins062/ajs-destructuring/issues"
   },
-  "homepage": "https://github.com/Malins062/ajs-object-reflection-proxy.git#readme",
+  "homepage": "https://github.com/Malins062/ajs-destructuring.git#readme",
   "devDependencies": {
     "@babel/cli": "^7.18.10",
     "@babel/core": "^7.18.10",
