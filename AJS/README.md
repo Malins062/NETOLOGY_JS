@@ -10,10 +10,10 @@
 
 Важно: [Примеры кода из лекций](https://github.com/netology-code/ajs-code/tree/ajs8)
 
-1. [x] [Стандарты и рабочее окружение](workspace)
-1. [x] [Модули и Webpack](modules)
-1. [x] [Платформы: браузер vs Node.js](platforms)
-1. [x] [Unit-тестирование](test-ci)
+1. [x] [Стандарты и рабочее окружение](Chapter_1/Task_1/)
+1. [x] [Модули и Webpack](Chapter_1/Task_2/)
+1. [x] [Платформы: браузер vs Node.js](Chapter_1/Task_3/)
+1. [x] [Unit-тестирование](Chapter_1/Task_4/tests-1/README.md)
 1. [x] [Прототипы, конструкторы, классы и наследование](oop)
 1. [x] [Object, Reflection и Proxy](advanced)
 1. [x] [Регулярные выражения](regex)
