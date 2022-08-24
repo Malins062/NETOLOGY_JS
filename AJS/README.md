@@ -17,7 +17,7 @@
 1. [x] [Прототипы, конструкторы, классы и наследование](Chapter_2/Task_1/)
 1. [x] [Object, Reflection и Proxy](Chapter_2/Task_2/)
 1. [x] [Регулярные выражения](Chapter_2/Task_3/)
-1. [x] [Контейнеры](containers)
+1. [x] [Контейнеры](Chapter_3/Task_1/)
 1. [x] [ArrayBuffer](arraybuffer)
 1. [x] [Promises, async/await, timers & event loop](async)
 1. [x] [Символы, итераторы, генераторы](symbols-iterators-generators)
