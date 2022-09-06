@@ -19,6 +19,6 @@
 1. [x] [Регулярные выражения](Chapter_2/Task_3/)
 1. [x] [Контейнеры](Chapter_3/Task_1/)
 1. [x] [ArrayBuffer](Chapter_3/Task_2/)
-1. [x] [Promises, async/await, timers & event loop](async)
+1. [x] [Promises, async/await, timers & event loop](Chapter_4/Task_1/)
 1. [x] [Символы, итераторы, генераторы](symbols-iterators-generators)
 1. [x] [TypeScript](typescript)
