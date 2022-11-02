@@ -1,0 +1,11 @@
+.goblin {
+    position: absolute;
+
+    width: 15%;
+    height: 15%;
+    object-fit: contain;
+}
+
+.hidden {
+    display: none;
+}

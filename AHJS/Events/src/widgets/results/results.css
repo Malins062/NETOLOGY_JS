@@ -1,0 +1,39 @@
+.result-border {
+    background-color: cadetblue;
+    border: 1px solid white;
+    border-radius: 10px;
+
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .result-title,
+  .result-timer-title {
+    font-weight: bold;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .result-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .result-item-space {
+    min-width: 5px;
+  }
+
+  .result-item-value {
+    min-width: 1.5rem;
+    text-align: right;
+  }
+
+  .description {
+    color: lightgray;
+    background-color: darkslategray;
+  }
+  
+  .description-text {
+    text-align: left;
+  }

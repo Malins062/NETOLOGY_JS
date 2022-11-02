@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Игра "ЗАВАЛИ ГОБЛИНА"</title>
+</head>
+<body>
+    <header>
+        <div class="title">ЗАВАЛИ ГОБЛИНА</div>
+    </header>
+
+    <div class="game">
+        <div class="game-field">
+            <div class="battle-field">
+                <div class="message-field">
+                    <div class="message"></div>
+                </div>
+                <img src="img/goblin.png" alt="Гоблин" class="goblin hidden" draggable="false">
+            </div>
+        </div>
+        <div class="game-nav">
+            <button class="game-start">Начать игру</button>
+            <button class="game-stop" disabled>Остановить</button>
+            <button class="game-reset">Сбросить</button>
+        </div>
+        <div class="game-result">
+            <div class="result-border">
+                <div class="result-title">Результы игры:</div>                
+                <div class="result-item id-1">
+                    <div class="result-item-title">Появлений ГОБЛИНА:</div>
+                    <div class="result-item-space"></div>
+                    <div class="result-item-value">0</div>
+                </div>
+                <div class="result-item id-4">
+                    <div class="result-item-title">Пропусков:</div>
+                    <div class="result-item-space"></div>
+                    <div class="result-item-value">0</div>
+                </div>
+                <div class="result-item id-2">
+                    <div class="result-item-title">Попаданий:</div>
+                    <div class="result-item-space"></div>
+                    <div class="result-item-value">0</div>
+                </div>
+                <div class="result-item id-3">
+                    <div class="result-item-title">Промахов:</div>
+                    <div class="result-item-space"></div>
+                    <div class="result-item-value">0</div>
+                </div>
+                <div class="result-timer">
+                    <div class="result-timer-title">Время игры:</div>                
+                    <div class="result-timer-value">00:00:00</div>
+                </div>
+            </div>
+            <div class="result-border description">
+                <div class="result-title">Правила игры:</div>                
+                <p class="description-text">
+                    После нажати на кнопку "Начать игру" на игровом поле в определенный период времени появляется "ГОБЛИН". 
+                    Ваша задача, успеть навести "Молоток" на "ГОБЛИНА" и ударить по нему. 
+                    Цель - как можно больше убить "ГОБЛИНОВ".
+                    После 5-ти пропусков игра будет окончена.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="game-version">
+            <!-- <image class="build" src="https://ci.appveyor.com/api/projects/status/ofburp279kp3we25" alt="Статус проекта"></image> -->
+            <small class="version">Версия 1.0.2</small>    
+        </div>
+    </footer>
+</body>
+</html>
