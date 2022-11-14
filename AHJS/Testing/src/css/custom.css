@@ -1,0 +1,58 @@
+body {
+    background-color: lightgray;
+}
+
+.cards {
+    margin: 10px 0;
+    height: 25px;
+}
+
+.cards li {
+    display: block;
+    float: left;
+}
+
+.card {
+    float: left;
+    width: 39px;
+    height: 25px;
+    margin-right: 4px;
+    background-color: white;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.card.disabled {
+    background-color: lightgray;
+    opacity: .3;
+}
+
+
+.card.diners { 
+    background-image: url('../img/card-diners.png');
+}
+
+.card.discover { 
+    background-image: url('../img/card-discover.png');
+}
+
+.card.amex {
+    background-image: url('../img/card-amex.png');
+}
+
+.card.jcb {
+    background-image: url('../img/card-jcb.png');
+}
+
+.card.visa {
+    background-image: url("../img/card-visa.png");
+}
+
+.card.master {
+    background-image: url('../img/card-master.png');
+}
+
+.card.mir {
+    background-image: url('../img/card-mir.png');    
+} 
