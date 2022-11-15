@@ -18,7 +18,7 @@ export default class CardNumberWidget {
     return `
         <form id="form" class="cardnumber-form-widget form-inline row g-2" novalidate="novalidate">
           <div class="form-group col-md-8 mt-1">
-              <input class="form-control" id="cardnumber-input" name="card_number" type="text" placeholder="Введите номер карты" aria-describedby="cardnumber-feeddback">
+              <input class="form-control input" id="cardnumber-input" name="card_number" type="text" placeholder="Введите номер карты" aria-describedby="cardnumber-feeddback">
               <div id="cardnumber-invalid-feedback" class="invalid-feedback">Карта не идентифицирована</div>
               <div id="cardnumber-valid-feedback" class="valid-feedback">Карта не идентифицирована</div>
           </div>

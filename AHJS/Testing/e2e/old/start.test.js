@@ -3,10 +3,11 @@ import puppeteer from 'puppeteer';
 describe('Page start', () => {
   let browser;
   let page;
+  jest.setTimeout(30000);
 
   beforeEach(async () => {
     browser = await puppeteer.launch({
-      headless: false,
+      headless: true,
       slowMo: 100,
       devtools: true,
     });
@@ -14,10 +15,10 @@ describe('Page start', () => {
     page = await browser.newPage();
   });
 
-  test('test', async () => {
-    await page.goto('http://localhost:9000');
+  test('Test open new server page', async () => {
+    await page.goto('http://localhost:8888');
 
-    await page.waitFor('body');
+    await page.waitForSelector('body');
   });
 
   afterEach(async () => {
