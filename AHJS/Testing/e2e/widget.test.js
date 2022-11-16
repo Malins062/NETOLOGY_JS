@@ -39,11 +39,8 @@ describe('Card number widget form test', () => {
 
     await page.waitForSelector('.cardnumber-form-widget');
     const form = await page.$('.cardnumber-form-widget');
-    console.log(page);
-    console.log(form);
 
     const input = await form.$('.input');
-    console.log(input);
     await input.type('2200240768512994');    
 
     const button = await form.$('.submit');
