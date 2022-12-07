@@ -1,0 +1,22 @@
+.collapsible * {
+  display: block;
+  margin-top: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: solid lightgray 1px;
+  background-color: white;
+}
+
+.collapsible {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 2s;
+}
+
+.collapsible.show {
+  overflow: hidden;
+  max-height: 400px;
+  transition: max-height 2s;
+}
+
