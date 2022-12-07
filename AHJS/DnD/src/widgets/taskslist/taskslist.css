@@ -1,0 +1,92 @@
+.hidden {
+  display: none;
+}
+
+.tasks__title,
+.tasks__item,
+.item__add {
+  user-select: none;
+}
+
+.tasks__card {
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.tasks__card.drop {
+  border-radius: 5px;
+  box-shadow: 0 0 40px rgb(13, 250, 5); /* Параметры тени */
+}
+
+.tasks__header {
+  background-color: gray;
+  color: white;
+  text-align: center;
+}
+
+.tasks__list {
+  list-style-type: none;    
+  min-height: 20px;
+}
+
+.item__add {
+  cursor: pointer;
+}
+
+.item__close {
+  position: absolute;  
+  top: calc(0% + 0.2rem);
+  left: calc(100% - 0.8rem);
+  font-size: xx-small;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.new__item__close:hover,
+.item__close:hover {
+  color: red;
+  font-weight: bolder;
+}
+
+.tasks__item:hover {
+  background-color: rgb(152, 253, 219);
+}
+
+.tasks__item {
+  background-color: rgb(242, 251, 248);
+  list-style-type: none;    
+  cursor: grab !important; 
+}
+
+.tasks__item:active {
+  cursor: grabbing !important;
+}
+
+.tasks__item.dragging {
+  /* background-color: rgb(230, 245, 182); */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgb(1, 59, 35); /* Параметры тени */
+  /* padding: 10px; */
+
+  /* position: absolute; */
+  /* z-index: 999; */
+  /* pointer-events: none; */
+  /* cursor: grabbing !important; */
+  opacity: .5;
+  transform: scale(.9);
+
+  /* transform: rotate(2deg);
+  -webkit-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  -moz-transform: rotate(2deg); */
+}
+
+.tasks__item.selected {
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgb(38, 38, 38); /* Параметры тени */
+  cursor: grabbing !important;
+
+  transform: rotate(2deg);
+  -webkit-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+}
