@@ -47,7 +47,7 @@
   font-weight: bolder;
 }
 
-.tasks__item:hover {
+.tasks__item.hovered {
   background-color: rgb(152, 253, 219);
 }
 
@@ -62,31 +62,14 @@
 }
 
 .tasks__item.dragging {
-  /* background-color: rgb(230, 245, 182); */
+  background-color: rgb(211, 252, 217);
   border-radius: 5px;
-  box-shadow: 0 0 10px rgb(1, 59, 35); /* Параметры тени */
+  box-shadow: 0 0 5px rgb(156, 155, 155); /* Параметры тени */
   /* padding: 10px; */
 
   /* position: absolute; */
   /* z-index: 999; */
   /* pointer-events: none; */
-  /* cursor: grabbing !important; */
-  opacity: .5;
-  transform: scale(.9);
-
-  /* transform: rotate(2deg);
-  -webkit-transform: rotate(2deg);
-  -o-transform: rotate(2deg);
-  -moz-transform: rotate(2deg); */
-}
-
-.tasks__item.selected {
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgb(38, 38, 38); /* Параметры тени */
   cursor: grabbing !important;
-
-  transform: rotate(2deg);
-  -webkit-transform: rotate(2deg);
-  -o-transform: rotate(2deg);
-  -moz-transform: rotate(2deg);
+  opacity: .6;
 }
