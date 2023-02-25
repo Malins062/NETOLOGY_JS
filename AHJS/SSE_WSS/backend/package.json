@@ -1,0 +1,35 @@
+{
+  "name": "ahj_sse_wss_backend",
+  "version": "1.0.0",
+  "description": "Example SSE WSS Server",
+  "main": "index.js",
+  "scripts": {
+    "start": "forever index.js",
+    "watch": "forever -w index.js",
+    "build": "webpack --mode production",
+    "lint": "eslint .",
+    "lintfix": "eslint . --fix"
+  },
+  "author": "Alexei Malinovskii",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^7.17.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "http-event-stream": "^0.2.0",
+    "forever": "^3.0.4",
+    "koa": "^2.13.1",
+    "koa-static": "^5.0.0",
+    "koa-body": "^4.2.0",
+    "koa-router": "^10.0.0",
+    "koa2-cors": "^2.0.6",
+    "ws": "^7.5.9",
+    "uuid": "^8.3.2",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.1"
+  },
+  "engines": {
+    "node": "^14.15"
+  }
+}

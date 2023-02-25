@@ -1,0 +1,250 @@
+/* KEYFRAMES */
+
+@keyframes spin {
+    from {
+      transform: rotate(0);
+    }
+    to{
+      transform: rotate(359deg);
+    }
+  }
+  
+/* GRID STYLING */
+
+img { 
+    max-width:100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.messaging { 
+    height: 100%;
+    width: auto;
+}
+
+.inbox_msg {
+    display: flex;
+    border: 1px solid #c4c4c4;
+    border-radius: 20px;
+    clear: both;
+    overflow: hidden;
+    height: 100%;
+}
+ 
+.left_side {
+    background: #f8f8f8 none repeat scroll 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    width: 40%; 
+    border-right: 1px solid #c4c4c4;
+}
+
+.right_side {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    width: 60%; 
+}
+
+.users_list { 
+    flex: 2;
+    margin: 0;
+    overflow-y: scroll;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    flex: 2;
+    margin: 0;
+}  
+
+
+.msg_history {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    flex: 2;
+    overflow-y: auto;
+    margin: 0;
+    padding: 15px;
+}
+
+.heading_panel { 
+    padding: 10px; 
+    overflow: hidden; 
+    border-bottom: 1px solid #c4c4c4;    
+}
+
+.recent_heading {
+    width: 100%;
+}
+
+.recent_heading h4 {
+    color: #05728f;
+    font-size: 21px;
+    margin: auto;
+    text-align: center;
+}
+
+.user_item {
+    border-bottom: 1px solid #c4c4c4;
+    margin: 0;
+    padding: 10px;
+}
+
+.user { 
+    display: flex;
+    align-items: center;
+    overflow: hidden; 
+    clear: both;
+}
+
+.user_name {
+    float: left;
+    padding: 0 0 0 15px;
+    width: 88%;
+}
+
+.user_name h5 { 
+    font-size: 15px; 
+    color:#464646; 
+    margin: 0;
+}
+
+.user_image {
+    float: left;
+    width: 11%;
+}
+
+.active_user { 
+    background: #a2deee;
+}
+
+.incoming_msg {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 15px;
+    width: 100%;
+ }
+
+.outgoing_msg { 
+    display: flex;
+    justify-content: end;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.incoming_msg .msg {
+    display: inline-block;
+    text-align: start;
+    vertical-align: top;
+    width: 70%;
+}
+
+.outgoing_msg .msg {
+    display: inline-block;
+    text-align: end;
+    vertical-align: top;
+    width: 70%;
+}
+
+.msg_text {
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.msg_header {
+    color: #747474;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.incoming_msg .msg .msg_header {
+    margin-left: 5px;
+}
+
+.incoming_msg .msg .msg_text {
+    background: #ebebeb none repeat scroll 0 0;    
+    color: #646464;
+    margin: 0;
+}
+
+.outgoing_msg .msg .msg_text {
+    background: #a2deee none repeat scroll 0 0;
+    font-size: 14px;
+    color: #646464;
+    margin: 0; 
+}
+
+.outgoing_msg .msg .msg_header {
+    color: coral;
+    margin-right: 5px;
+}
+
+.type_msg {
+    border-top: 1px solid #c4c4c4;
+    padding: 10px;
+}
+
+.type_msg input {
+    border: 1px solid #c4c4c4;
+    border-radius: 0 0 20px ;
+    color: #4c4c4c;
+    font-size: 15px;
+    min-height: 48px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+}
+
+.form-login {
+    position: absolute;
+    top:  50%;
+    left: 50%;
+    width:50%;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgb(11, 11, 11); /* Параметры тени */
+    background-color: white;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+  }
+  
+  .loading-process {
+    position: absolute;
+    top:  50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #c7f4f8;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    animation: spin .5s linear 0s infinite;
+    z-index: 999;
+  }
+  
+  .overlay {
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    width:100%;
+    height:100%;
+    z-index:998;
+    background-color: Black;
+    opacity: .3;
+  }
