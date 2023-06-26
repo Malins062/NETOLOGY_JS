@@ -6,6 +6,6 @@
 
 ## 2. ["Продвинутый JavaScript".](AJS/README.md "Глава 2")
 
-## 3. ["Расширенный инструментарий JavaScript".](AHJS/ "Глава 3")
+## 3. ["Расширенный инструментарий JavaScript".](AHJS/README.md "Глава 3")
 
 ## 4. ["React JavaScript".](React/README.md "Глава 4")
