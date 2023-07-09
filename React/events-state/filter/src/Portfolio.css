@@ -1,0 +1,47 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.container-image {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+img {
+  height: 100%;
+  object-fit: contain;
+  margin: 5px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 6px;
+  text-align: center;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
+ul {
+  padding: 5px 10px;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+
+ul:hover {
+  background: #e1dede;
+  color: white;
+}
+
+ul.active {
+  background: #333;
+  color: white;
+}

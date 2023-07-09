@@ -6,7 +6,7 @@
 
 1.1. [Компоненты](components/README.md)
 
-1.2. [События и состояние](events-state)
+1.2. [События и состояние](events-state/README.md)
 
 1.3. [Props](props)
 
