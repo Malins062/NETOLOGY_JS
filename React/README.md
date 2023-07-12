@@ -8,7 +8,7 @@
 
 1.2. [События и состояние](events-state/README.md)
 
-1.3. [Props](props)
+1.3. [Props](props/README.md)
 
 1.4. [Формы](forms)
 

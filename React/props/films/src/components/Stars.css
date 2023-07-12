@@ -1,0 +1,9 @@
+.card-body-stars.u-clearfix ul {
+    list-style-type: none;
+}
+
+ul li {
+    position: relative;
+    height: auto;
+    display: inline-block;
+}
