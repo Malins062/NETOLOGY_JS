@@ -1,0 +1,8 @@
+.btn-notes {
+    display: block;
+    height: 35px;
+    width: 35px;
+    margin: auto;
+    border-radius: 50%;
+    border: 2px solid darkgray;
+}

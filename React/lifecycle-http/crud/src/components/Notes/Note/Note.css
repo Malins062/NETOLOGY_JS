@@ -1,0 +1,10 @@
+.card {
+    min-width: 320px;
+}
+
+.btn-notes-close {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    z-index: 20;
+}

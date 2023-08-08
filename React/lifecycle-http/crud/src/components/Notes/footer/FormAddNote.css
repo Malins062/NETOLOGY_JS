@@ -1,0 +1,12 @@
+.card {
+    min-width: 320px;
+}
+
+.btn-notes-send {
+    position: relative;
+    color: rgb(66, 62, 62);
+    top: calc(100% - 70px);
+    left: -100px;
+    transform: rotate(45deg);
+    z-index: 20;
+}
