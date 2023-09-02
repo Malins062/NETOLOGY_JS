@@ -22,7 +22,7 @@
 
 2.4. [hooks, Context API](hooks-context/react-hooks-context-use-effect/)
 
-2.5. [React Router](router)
+2.5. [React Router](router/README.md)
 
 ### Блок 3. Redux - управление состоянием
 
