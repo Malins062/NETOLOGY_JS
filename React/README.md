@@ -20,7 +20,7 @@
 
 2.3. [HOC](hoc/README.md)
 
-2.4. [Hooks, Context API](hooks-context/react-hooks-context-use-effect/)
+2.4. [Hooks, Context API](hooks-context/use-effect/README.md)
 
 2.5. [React Router](router/README.md)
 
