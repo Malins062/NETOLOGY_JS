@@ -1,0 +1,41 @@
+/* KEYFRAMES */
+
+@keyframes spin {
+   from {
+     transform: rotate(0);
+   }
+   to{
+     transform: rotate(359deg);
+   }
+ }
+
+.list-item-user {
+  cursor: pointer;  
+}
+ 
+.loading-process {
+  position: absolute;
+  top:  50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  border: 5px solid #c7f4f8;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
+  animation: spin .2s linear 0s infinite;
+  z-index: 999;
+ }
+  
+.overlay {
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  width:100%;
+  height:100%;
+  z-index:998;
+  background-color: Black;
+  opacity: .3;
+}

@@ -14,13 +14,13 @@
 
 ### Блок 2. Продвинутые техники, одностраничные приложения
 
-2.1. [Композиция компонентов](composition)
+2.1. [Композиция компонентов](composition/README.md)
 
-2.2. [Жизненный цикл и работа с HTTP](lifecycle-http)
+2.2. [Жизненный цикл и работа с HTTP](lifecycle-http/README.md)
 
-2.3. [HOC](hoc)
+2.3. [HOC](hoc/README.md)
 
-2.4. [hooks, Context API](hooks-context)
+2.4. [hooks, Context API](hooks-context/react-hooks-context-use-effect/)
 
 2.5. [React Router](router)
 
