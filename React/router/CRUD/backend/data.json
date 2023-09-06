@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "created": "01.01.20019 17:23",
+        "avatar": "https://1avatara.ru/pic/star/star00027.jpg",
+        "content": "React крутая библиотека"
+    },
+    {
+        "id": 2,
+        "created": "21.03.20020 19:53",
+        "name": "Елена Прекрасная",
+        "avatar": "https://1avatara.ru/pic/star/star00001.png",
+        "content": "PHP - вышел из моды"
+    },
+    {
+        "id": 3,
+        "created": "05.05.20021 10:01",
+        "name": "Михаил Цигуров",
+        "avatar": "https://1avatara.ru/pic/star/star00015.jpg",
+        "content": "Python - передовой язык программирования"
+    },
+    {
+        "id": 4,
+        "created": "01.10.2023 07:20",
+        "name": "Дмитрий Вышегородцев",
+        "avatar": "https://1avatara.ru/pic/star/star00004.png",
+        "content": "JavaScript - самый востребованный язык программирования"
+    }
+]
