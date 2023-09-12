@@ -1,0 +1,14 @@
+a {
+  text-decoration: none;
+}
+
+.card-post {
+  cursor: pointer;  
+}
+ 
+.loading-process {
+  position: absolute;
+  top:  5%;
+  left: 5%;
+  z-index: 999;
+ }
