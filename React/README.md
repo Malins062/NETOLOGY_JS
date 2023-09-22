@@ -26,9 +26,9 @@
 
 ### Блок 3. Redux - управление состоянием
 
-3.1. [Redux](redux)
+3.1. [Redux](redux/README.md)
 
-3.1. [Redux Toolkit](toolkit)
+3.1. [Redux Toolkit](redux-toolkit/README.md)
 
 3.2. [Redux Observable](observable)
 
