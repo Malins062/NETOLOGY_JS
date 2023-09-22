@@ -1,4 +1,7 @@
+# Sofware
+
 В рамках лекций для демонстрации используется следующий комплект ПО, который мы рекомендуем вам также использовать:
+
 1. Редактор кода [VSCode](https://code.visualstudio.com/download) или [VSCodium](https://vscodium.com) поддерживает необходимые нам плагины и эмулятор терминала.
 1. [Git](https://git-scm.com/downloads) и аккаунт на GitHub для сдачи домашек.
 1. [Node.js LTS](https://nodejs.org/en/download/) для установки инструментов.
