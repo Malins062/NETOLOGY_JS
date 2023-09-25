@@ -24,10 +24,14 @@ const NavBar = () => {
   return (
     <>
     <section>
-      <nav className='navbar navbar-expand-sm navbar-light sticky-top pb-3 bg-form' id='neubar'>
+      <nav className='navbar navbar-expand-md navbar-light sticky-top pb-2 bg-form' id='neubar'>
         <div className='container'>
 
-          <span className='navbar-brand'>Библиотека фильмов</span>
+          <div className='navbar-brand d-flex align-middle'>
+            <span>Библиотека фильмов OMDb API</span>
+            <img src='src/img/movieOMDb.png' alt='' width='32' height='32' className='mx-2'/>
+          </div>
+
           <button className='navbar-toggler' type='button' 
             data-bs-toggle='collapse' 
             data-bs-target='#navbarSupportedContent' 
