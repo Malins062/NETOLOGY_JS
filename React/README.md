@@ -32,7 +32,7 @@
 
 3.2. [Redux Observable](observable)
 
-3.3. [Redux Saga](saga)
+3.3. [Redux Saga](redux-saga/README.md)
 
 ### Полезные ссылки
 
